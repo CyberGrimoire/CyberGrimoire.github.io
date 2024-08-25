@@ -568,312 +568,319 @@
   },"81": {
     "doc": "Home",
     "title": "License",
-    "content": "The theme is available as open source under the terms of the MIT License. License . Just the Docs is distributed by an MIT license. Contributing . When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in our GitHub repo. Thank you to the contributors of Just the Docs! . | . Code of Conduct . Just the Docs is committed to fostering a welcoming community. View our Code of Conduct on our GitHub repository. ",
+    "content": "The theme is available as open source under the terms of the MIT License. License . Just the Docs is distributed by an MIT license. Contributing . When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in our GitHub repo. Thank you to the contributors of Just the Docs! . | . ",
     "url": "/#license",
     
     "relUrl": "/#license"
   },"82": {
+    "doc": "Home",
+    "title": "Props!",
+    "content": "This project uses Jekyll + GitPages as the “infrastructure”, and uses a modified version of Just-the-Docs theme forr Jekyll. Thank you to the creators of these tools/technologies. ",
+    "url": "/#props",
+    
+    "relUrl": "/#props"
+  },"83": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"83": {
+  },"84": {
     "doc": "Labels",
     "title": "Labels",
     "content": "Use labels as a way to add an additional mark to a section of your docs. Labels come in a few colors. By default, labels will be blue. Default label . Blue label . Stable . New release . Coming soon . Deprecated . Default label {: .label } Blue label {: .label .label-blue } Stable {: .label .label-green } New release {: .label .label-purple } Coming soon {: .label .label-yellow } Deprecated {: .label .label-red } . ",
     "url": "/docs/ui-components/labels/",
     
     "relUrl": "/docs/ui-components/labels/"
-  },"84": {
+  },"85": {
     "doc": "Layout",
     "title": "Layout Utilities",
     "content": " ",
     "url": "/docs/utilities/layout/#layout-utilities",
     
     "relUrl": "/docs/utilities/layout/#layout-utilities"
-  },"85": {
+  },"86": {
     "doc": "Layout",
     "title": "Table of contents",
     "content": ". | Spacing | Horizontal Alignment | Vertical Alignment | Display | . ",
     "url": "/docs/utilities/layout/#table-of-contents",
     
     "relUrl": "/docs/utilities/layout/#table-of-contents"
-  },"86": {
+  },"87": {
     "doc": "Layout",
     "title": "Spacing",
     "content": "These spacers are available to use for margins and padding with responsive utility classes. Combine these prefixes with a screen size and spacing scale to use them responsively. | Classname prefix | What it does | . | .m- | margin | . | .mx- | margin-left, margin-right | . | .my- | margin top, margin bottom | . | .mt- | margin-top | . | .mr- | margin-right | . | .mb- | margin-bottom | . | .ml- | margin-left | . | Classname prefix | What it does | . | .p- | padding | . | .px- | padding-left, padding-right | . | .py- | padding top, padding bottom | . | .pt- | padding-top | . | .pr- | padding-right | . | .pb- | padding-bottom | . | .pl- | padding-left | . Spacing values are based on a 1rem = 16px spacing scale, broken down into these units: . | Spacer/suffix | Size in rems | Rem converted to px | . | 1 | 0.25rem | 4px | . | 2 | 0.5rem | 8px | . | 3 | 0.75rem | 12px | . | 4 | 1rem | 16px | . | 5 | 1.5rem | 24px | . | 6 | 2rem | 32px | . | 7 | 2.5rem | 40px | . | 8 | 3rem | 48px | . | auto | auto | auto | . Use mx-auto to horizontally center elements. Examples . In Markdown, use the {: } wrapper to apply custom classes: . This paragraph will have a margin bottom of 1rem/16px on large screens. {: .mb-lg-4 } This paragraph will have 2rem/32px of padding on the right and left at all screen sizes. {: .px-6 } . ",
     "url": "/docs/utilities/layout/#spacing",
     
     "relUrl": "/docs/utilities/layout/#spacing"
-  },"87": {
+  },"88": {
     "doc": "Layout",
     "title": "Horizontal Alignment",
     "content": "| Classname | What it does | . | .float-left | float: left | . | .float-right | float: right | . | .flex-justify-start | justify-content: flex-start | . | .flex-justify-end | justify-content: flex-end | . | .flex-justify-between | justify-content: space-between | . | .flex-justify-around | justify-content: space-around | . Note: any of the flex- classes must be used on a parent element that has d-flex applied to it. ",
     "url": "/docs/utilities/layout/#horizontal-alignment",
     
     "relUrl": "/docs/utilities/layout/#horizontal-alignment"
-  },"88": {
+  },"89": {
     "doc": "Layout",
     "title": "Vertical Alignment",
     "content": "| Classname | What it does | . | .v-align-baseline | vertical-align: baseline | . | .v-align-bottom | vertical-align: bottom | . | .v-align-middle | vertical-align: middle | . | .v-align-text-bottom | vertical-align: text-bottom | . | .v-align-text-top | vertical-align: text-top | . | .v-align-top | vertical-align: top | . ",
     "url": "/docs/utilities/layout/#vertical-alignment",
     
     "relUrl": "/docs/utilities/layout/#vertical-alignment"
-  },"89": {
+  },"90": {
     "doc": "Layout",
     "title": "Display",
     "content": "Display classes aid in adapting the layout of the elements on a page: . | Class |   | . | .d-block | display: block | . | .d-flex | display: flex | . | .d-inline | display: inline | . | .d-inline-block | display: inline-block | . | .d-none | display: none | . Use these classes in conjunction with the responsive modifiers. Examples . In Markdown, use the {: } wrapper to apply custom classes: . This button will be hidden until medium screen sizes: [ A button ](#url) {: .d-none .d-md-inline-block } These headings will be `inline-block`: ### heading 3 {: .d-inline-block } ### heading 3 {: .d-inline-block } . ",
     "url": "/docs/utilities/layout/#display",
     
     "relUrl": "/docs/utilities/layout/#display"
-  },"90": {
+  },"91": {
     "doc": "Layout",
     "title": "Layout",
     "content": " ",
     "url": "/docs/utilities/layout/",
     
     "relUrl": "/docs/utilities/layout/"
-  },"91": {
+  },"92": {
     "doc": "Code with line numbers",
     "title": "Code snippets with line numbers",
     "content": "In prior versions of the docs, we provided “workarounds” to rendering issues arising from code snippets with line numbers. While these seemed to resolve visual layout issues, they did not resolve core issues with Jekyll generating invalid HTML. See the detailed explanation for more information. The default settings for HTML compression are incompatible with the HTML produced by Jekyll for line numbers from highlighted code – both when using Kramdown code fences and when using Liquid highlight tags. To avoid non-conforming HTML and unsatisfactory layout, HTML compression can be turned off by using the following configuration option: . compress_html: ignore: envs: all . When using Kramdown code fences, line numbers are turned on globally by the following configuration option: . kramdown: syntax_highlighter_opts: block: line_numbers: true . Line numbers can then be suppressed locally using Liquid tags (without the linenos option) instead of fences: . {% highlight some_language %} Some code {% endhighlight %} . ",
     "url": "/docs/ui-components/code/line-numbers/#code-snippets-with-line-numbers",
     
     "relUrl": "/docs/ui-components/code/line-numbers/#code-snippets-with-line-numbers"
-  },"92": {
+  },"93": {
     "doc": "Code with line numbers",
     "title": "Detailed Error Explanation",
     "content": "Consider this following code snippet, intended to highlight a simple Ruby program: . {% highlight ruby linenos %} def foo puts 'foo' end {% endhighlight %} . If this is directly placed within a file processed by Jekyll (via Just the Docs, with HTML compression enabled), the following markup will be generated: . &lt;figure class=\"highlight\"&gt;&gt;&lt;code class=\"language-ruby\" data-lang=\"ruby\"&gt;&lt;div class=\"table-wrapper\"&gt;&lt;table class=\"rouge-table\"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=\"gutter gl\"&gt;&lt;pre class=\"lineno\"&gt;1 2 3 &lt;/pre&gt;&lt;td class=\"code\"&gt;&lt;pre&gt;&lt;span class=\"k\"&gt;def&lt;/span&gt; &lt;span class=\"nf\"&gt;foo&lt;/span&gt; &lt;span class=\"nb\"&gt;puts&lt;/span&gt; &lt;span class=\"s1\"&gt;'foo'&lt;/span&gt; &lt;span class=\"k\"&gt;end&lt;/span&gt; &lt;/pre&gt;&lt;/figure&gt; . This HTML is invalid; in particular, there are two issues: . | there are many missing closing tags, and a superfluous &gt;, which produce visually garbled output | a &lt;table&gt; is placed within a &lt;code&gt; element, which is syntactically invalid HTML (but is often allowed by browsers) | . To emphasize this first difference, here is the same markup output, indented by tag: . &lt;figure class=\"highlight\"&gt; &gt; &lt;code class=\"language-ruby\" data-lang=\"ruby\"&gt; &lt;div class=\"table-wrapper\"&gt; &lt;table class=\"rouge-table\"&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td class=\"gutter gl\"&gt; &lt;pre class=\"lineno\"&gt; 1 2 3 &lt;/pre&gt; &lt;td class=\"code\"&gt; &lt;pre&gt; &lt;span class=\"k\"&gt;def&lt;/span&gt; &lt;span class=\"nf\"&gt;foo&lt;/span&gt; &lt;span class=\"nb\"&gt;puts&lt;/span&gt; &lt;span class=\"s1\"&gt;'foo'&lt;/span&gt; &lt;span class=\"k\"&gt;end&lt;/span&gt; &lt;/pre&gt; &lt;/figure&gt; . In order, there are missing &lt;/td&gt;, &lt;/td&gt;, &lt;/tr&gt;, &lt;/tbody&gt;, &lt;/table&gt;, &lt;/div&gt;, and &lt;/code&gt; tags. As a result, the following elements of the page - including the site footer - become visually garbled as browsers attempt to recover gracefully. Prior workarounds we suggested (such as Dmitry Hrabrov’s in jekyll-compress-html#71) resolve the missing tag problem. However, they still place a &lt;table&gt; within a &lt;code&gt; element. The HTML spec normatively states that &lt;code&gt; elements should only contain “phrasing content”, which does not include &lt;table&gt; (spec ref). To avoid incorrectly rendered HTML, the previously-suggested workaround using the current version of _includes/fix_linenos.html should not be used! . ",
     "url": "/docs/ui-components/code/line-numbers/#detailed-error-explanation",
     
     "relUrl": "/docs/ui-components/code/line-numbers/#detailed-error-explanation"
-  },"93": {
+  },"94": {
     "doc": "Code with line numbers",
     "title": "Code with line numbers",
     "content": " ",
     "url": "/docs/ui-components/code/line-numbers/",
     
     "relUrl": "/docs/ui-components/code/line-numbers/"
-  },"94": {
+  },"95": {
     "doc": "Lists",
     "title": "Lists",
     "content": " ",
     "url": "/docs/ui-components/lists/",
     
     "relUrl": "/docs/ui-components/lists/"
-  },"95": {
+  },"96": {
     "doc": "Lists",
     "title": "Table of contents",
     "content": ". | Unordered list | Ordered list | Task list | Definition list | . Most lists can be rendered with pure Markdown. ",
     "url": "/docs/ui-components/lists/#table-of-contents",
     
     "relUrl": "/docs/ui-components/lists/#table-of-contents"
-  },"96": {
+  },"97": {
     "doc": "Lists",
     "title": "Unordered list",
     "content": ". | Item 1 | Item 2 | Item 3 | . or . | Item 1 | Item 2 | Item 3 | . - Item 1 - Item 2 - Item 3 _or_ * Item 1 * Item 2 * Item 3 . ",
     "url": "/docs/ui-components/lists/#unordered-list",
     
     "relUrl": "/docs/ui-components/lists/#unordered-list"
-  },"97": {
+  },"98": {
     "doc": "Lists",
     "title": "Ordered list",
     "content": ". | Item 1 | Item 2 | Item 3 | . 1. Item 1 1. Item 2 1. Item 3 . ",
     "url": "/docs/ui-components/lists/#ordered-list",
     
     "relUrl": "/docs/ui-components/lists/#ordered-list"
-  },"98": {
+  },"99": {
     "doc": "Lists",
     "title": "Task list",
     "content": ". | hello, this is a todo item | hello, this is another todo item | goodbye, this item is done | . - [ ] hello, this is a todo item - [ ] hello, this is another todo item - [x] goodbye, this item is done . ",
     "url": "/docs/ui-components/lists/#task-list",
     
     "relUrl": "/docs/ui-components/lists/#task-list"
-  },"99": {
+  },"100": {
     "doc": "Lists",
     "title": "Definition list",
     "content": "Definition lists require HTML syntax and aren’t supported with the GitHub Flavored Markdown compiler. Name Godzilla Born 1952 Birthplace Japan Color Green &lt;dl&gt; &lt;dt&gt;Name&lt;/dt&gt; &lt;dd&gt;Godzilla&lt;/dd&gt; &lt;dt&gt;Born&lt;/dt&gt; &lt;dd&gt;1952&lt;/dd&gt; &lt;dt&gt;Birthplace&lt;/dt&gt; &lt;dd&gt;Japan&lt;/dd&gt; &lt;dt&gt;Color&lt;/dt&gt; &lt;dd&gt;Green&lt;/dd&gt; &lt;/dl&gt; . ",
     "url": "/docs/ui-components/lists/#definition-list",
     
     "relUrl": "/docs/ui-components/lists/#definition-list"
-  },"100": {
+  },"101": {
     "doc": "Minimal layout child page",
     "title": "Minimal layout child page",
     "content": "This is a child page that uses the same minimal layout as its parent page. ",
     "url": "/docs/layout/minimal/minimal-child/",
     
     "relUrl": "/docs/layout/minimal/minimal-child/"
-  },"101": {
+  },"102": {
     "doc": "Minimal layout test",
     "title": "Minimal layout test",
     "content": "Return to main website. This page demonstrates the packaged minimal layout, which does not render the sidebar or header. It can be used for standalone pages. It is also an example of using the new modular site components to define custom layouts; see “Custom layouts and includes” in the customization docs for more information. ",
     "url": "/docs/minimal-test/",
     
     "relUrl": "/docs/minimal-test/"
-  },"102": {
+  },"103": {
     "doc": "A minimal layout page",
     "title": "A minimal layout page",
     "content": "This page illustrates the built-in layout minimal. One of its child pages also uses the minimal layout; the other child pages uses the default layout. ",
     "url": "/docs/layout/minimal/minimal/",
     
     "relUrl": "/docs/layout/minimal/minimal/"
-  },"103": {
+  },"104": {
     "doc": "Responsive Modifiers",
     "title": "Responsive modifiers",
     "content": "Just the Docs spacing works in conjunction with a variety of modifiers that allow you to target specific screen sizes responsively. Use these in conjunction with spacing and display prefix and suffix classes. | Modifier | Screen size | . | (none) | All screens until the next modifier | . | xs | 320px (20rem) and up | . | sm | 500px (31.25rem) and up | . | md | 740px (46.25rem) and up | . | lg | 1120px (70rem) and up | . | xl | 1400px (87.5rem) and up | . ",
     "url": "/docs/utilities/responsive-modifiers/#responsive-modifiers",
     
     "relUrl": "/docs/utilities/responsive-modifiers/#responsive-modifiers"
-  },"104": {
+  },"105": {
     "doc": "Responsive Modifiers",
     "title": "Responsive Modifiers",
     "content": " ",
     "url": "/docs/utilities/responsive-modifiers/",
     
     "relUrl": "/docs/utilities/responsive-modifiers/"
-  },"105": {
+  },"106": {
     "doc": "Tables",
     "title": "Tables",
     "content": "Tables are responsive by default, allowing wide tables to have a horizontal scroll to access columns outside of the normal viewport. | head1 | head two | three | . | ok | good swedish fish | nice | . | out of stock | good and plenty | nice | . | ok | good oreos | hmm | . | ok | good zoute drop | yumm | . | head1 | head two | three |:-------------|:------------------|:------| ok | good swedish fish | nice | out of stock | good and plenty | nice | ok | good `oreos` | hmm | ok | good `zoute` drop | yumm | . ",
     "url": "/docs/ui-components/tables/",
     
     "relUrl": "/docs/ui-components/tables/"
-  },"106": {
+  },"107": {
     "doc": "Typography",
     "title": "Typography Utilities",
     "content": " ",
     "url": "/docs/utilities/typography/#typography-utilities",
     
     "relUrl": "/docs/utilities/typography/#typography-utilities"
-  },"107": {
+  },"108": {
     "doc": "Typography",
     "title": "Table of contents",
     "content": ". | Font size | Font weight | Line height | Text justification | . ",
     "url": "/docs/utilities/typography/#table-of-contents",
     
     "relUrl": "/docs/utilities/typography/#table-of-contents"
-  },"108": {
+  },"109": {
     "doc": "Typography",
     "title": "Font size",
     "content": "Use the .fs-1 - .fs-10 to set an explicit font-size. | Class | Small screen size font-size | Large screen size font-size | . | .fs-1 | 9px | 10px | . | .fs-2 | 11px | 12px | . | .fs-3 | 12px | 14px | . | .fs-4 | 14px | 16px | . | .fs-5 | 16px | 18px | . | .fs-6 | 18px | 24px | . | .fs-7 | 24px | 32px | . | .fs-8 | 32px | 38px | . | .fs-9 | 38px | 42px | . | .fs-10 | 42px | 48px | . Font size 1 . Font size 2 . Font size 3 . Font size 4 . Font size 5 . Font size 6 . Font size 7 . Font size 8 . Font size 9 . Font size 10 . In Markdown, use the `{: }` wrapper to apply custom classes: Font size 1 {: .fs-1 } Font size 2 {: .fs-2 } Font size 3 {: .fs-3 } Font size 4 {: .fs-4 } Font size 5 {: .fs-5 } Font size 6 {: .fs-6 } Font size 7 {: .fs-7 } Font size 8 {: .fs-8 } Font size 9 {: .fs-9 } Font size 10 {: .fs-10 } . ",
     "url": "/docs/utilities/typography/#font-size",
     
     "relUrl": "/docs/utilities/typography/#font-size"
-  },"109": {
+  },"110": {
     "doc": "Typography",
     "title": "Font weight",
     "content": "Use the .fw-300 - .fw-700 to set an explicit font-weight. Font weight 300 . Font weight 400 . Font weight 500 . Font weight 700 . In Markdown, use the `{: }` wrapper to apply custom classes: Font weight 300 {: .fw-300 } Font weight 400 {: .fw-400 } Font weight 500 {: .fw-500 } Font weight 700 {: .fw-700 } . ",
     "url": "/docs/utilities/typography/#font-weight",
     
     "relUrl": "/docs/utilities/typography/#font-weight"
-  },"110": {
+  },"111": {
     "doc": "Typography",
     "title": "Line height",
     "content": "Use the lh- classes to explicitly apply line height to text. | Class | line-height value | Notes | . | .lh-0 | 0 |   | . | .lh-tight | 1.1 | Default for headings | . | .lh-default | 1.4 | Default for body (paragraphs) | . No Line height No Line height . Tight line height Tight line height . Default line height Default line height . In Markdown, use the `{: }` wrapper to apply custom classes: No Line height No Line height {: .lh-0 } Tight line height Tight line height {: .lh-tight } Default line height Default line height {: .fh-default } . ",
     "url": "/docs/utilities/typography/#line-height",
     
     "relUrl": "/docs/utilities/typography/#line-height"
-  },"111": {
+  },"112": {
     "doc": "Typography",
     "title": "Text justification",
     "content": "By default text is justified left. Use these text- classes to override settings: . | Class | What it does | . | .text-left | text-align: left | . | .text-right | text-align: right | . | .text-center | text-align: center | . ",
     "url": "/docs/utilities/typography/#text-justification",
     
     "relUrl": "/docs/utilities/typography/#text-justification"
-  },"112": {
+  },"113": {
     "doc": "Typography",
     "title": "Typography",
     "content": " ",
     "url": "/docs/utilities/typography/",
     
     "relUrl": "/docs/utilities/typography/"
-  },"113": {
+  },"114": {
     "doc": "Web",
     "title": "Web",
     "content": "XSS Test Parent Dir . ",
     "url": "/docs/Web",
     
     "relUrl": "/docs/Web"
-  },"114": {
+  },"115": {
     "doc": "XSS",
     "title": "XSS",
     "content": "XSS Main Page . ",
     "url": "/docs/Web/XSS/xss/",
     
     "relUrl": "/docs/Web/XSS/xss/"
-  },"115": {
+  },"116": {
     "doc": "XSS - DOM",
     "title": "XSS - DOM",
     "content": " ",
     "url": "/docs/Web/XSS/xss_DOM/",
     
     "relUrl": "/docs/Web/XSS/xss_DOM/"
-  },"116": {
+  },"117": {
     "doc": "XSS - Reflected",
     "title": "Reflected XSS (Cross-Site Scripting)",
     "content": " ",
     "url": "/docs/Web/XSS/xss_reflected/#reflected-xss-cross-site-scripting",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#reflected-xss-cross-site-scripting"
-  },"117": {
+  },"118": {
     "doc": "XSS - Reflected",
     "title": "Summary",
     "content": "Reflected XSS, also known as non-persistent XSS, occurs when user-supplied data is immediately reflected back to the user by the web server without being properly sanitized or encoded. This type of XSS attack is typically delivered via a URL or a form submission, and the malicious script is executed within the browser of the victim who clicks on the crafted link. ",
     "url": "/docs/Web/XSS/xss_reflected/#summary",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#summary"
-  },"118": {
+  },"119": {
     "doc": "XSS - Reflected",
     "title": "Impact",
     "content": "Reflected XSS attacks can have significant consequences depending on the context in which they are exploited: . | Data Theft: Attackers can steal cookies, session tokens, or other sensitive data. | Account Takeover: By hijacking sessions, attackers can gain unauthorized access to user accounts. | Defacement: Malicious scripts can modify the appearance of a website. | Phishing: Attackers can redirect victims to fake login pages or other malicious sites. | . ",
     "url": "/docs/Web/XSS/xss_reflected/#impact",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#impact"
-  },"119": {
+  },"120": {
     "doc": "XSS - Reflected",
     "title": "Severity (CVSS)",
     "content": ". | Base Score: Typically between 4.0 (Medium) to 7.5 (High), depending on the context and impact. | Attack Vector: Network | Attack Complexity: Low | Privileges Required: None | User Interaction: Required | . ",
     "url": "/docs/Web/XSS/xss_reflected/#severity-cvss",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#severity-cvss"
-  },"120": {
+  },"121": {
     "doc": "XSS - Reflected",
     "title": "Detection - Exploitation",
     "content": ". | Detection: . | Manual Testing: . | Look for input fields, parameters, or URLs that reflect user input in the response. | Use tools like Burp Suite to analyze HTTP requests and responses. | . | Automated Tools: . | OWASP ZAP and Burp Suite offer automated XSS detection. | Browser-based XSS auditors, such as the ones built into Chrome or Firefox Developer Tools, can help identify reflected XSS vulnerabilities. | . | . | Exploitation: . | Crafting the Payload: . | Inject a payload such as &lt;script&gt;alert('XSS')&lt;/script&gt; into vulnerable parameters. | . | Delivering the Attack: . | Social engineering techniques are often used to trick victims into clicking on a malicious link. | . | Testing and Validation: . | If the script executes within the victim’s browser without being sanitized, the vulnerability is confirmed. | . | . | . ",
     "url": "/docs/Web/XSS/xss_reflected/#detection---exploitation",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#detection---exploitation"
-  },"121": {
+  },"122": {
     "doc": "XSS - Reflected",
     "title": "Remediation",
     "content": ". | Input Validation: . | Ensure that all user inputs are validated for allowed characters and data types. | . | Output Encoding: . | Encode user-supplied data before displaying it in the browser. Use appropriate context-specific encoding (HTML, JavaScript, URL encoding). | . | Content Security Policy (CSP): . | Implement a strict CSP to mitigate the impact of XSS by restricting the sources from which scripts can be executed. | . | Security Frameworks and Libraries: . | Use security-focused libraries and frameworks that automatically handle input sanitization and output encoding. | . | Regular Security Audits: . | Perform regular security audits and penetration tests to identify and fix XSS vulnerabilities. | . | . ",
     "url": "/docs/Web/XSS/xss_reflected/#remediation",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#remediation"
-  },"122": {
+  },"123": {
     "doc": "XSS - Reflected",
     "title": "References",
     "content": ". | OWASP Cross-Site Scripting (XSS) | PortSwigger Web Security Academy: Reflected XSS | Mozilla Developer Network (MDN): XSS Prevention | . ",
     "url": "/docs/Web/XSS/xss_reflected/#references",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#references"
-  },"123": {
+  },"124": {
     "doc": "XSS - Reflected",
     "title": "XSS - Reflected",
     "content": " ",
     "url": "/docs/Web/XSS/xss_reflected/",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/"
-  },"124": {
+  },"125": {
     "doc": "XSS - Stored",
     "title": "SS Rflected",
     "content": "Test.python . ",
     "url": "/docs/Web/XSS/xss_stored/#ss-rflected",
     
     "relUrl": "/docs/Web/XSS/xss_stored/#ss-rflected"
-  },"125": {
+  },"126": {
     "doc": "XSS - Stored",
     "title": "XSS - Stored",
     "content": " ",

@@ -71,16 +71,11 @@ email, or any other method with the owners of this repository before making a ch
 {% endfor %}
 </ul>
 
-### Code of Conduct
+## Props!
 
-Just the Docs is committed to fostering a welcoming community.
-
-[View our Code of Conduct](https://github.com/just-the-docs/just-the-docs/tree/main/CODE_OF_CONDUCT.md) on our GitHub repository.
-
-----
-
-[^1]: The [source file for this page] uses all three markup languages.
-
-[^2]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+This project uses **Jekyll** + **GitPages** as the "infrastructure", and uses a modified version of **Just-the-Docs** theme forr Jekyll.
+Thank you to the creators of these tools/technologies.
 
 [Jekyll]: https://jekyllrb.com
+[GitHub Pages]: https://pages.github.com/
+[Just the Docs]: https://just-the-docs.com
