@@ -46,15 +46,15 @@ Reflected XSS attacks can have significant consequences depending on the context
   - **Testing and Validation:**
     - If the script executes within the victim's browser without being sanitized, the vulnerability is confirmed.
 
-![](../../assets/images/Web/XSS/XSS_Reflected_1.png)
+![](/assets/images/Web/XSS/XSS_Reflected_1.png)
 
-![](../../assets/images/Web/XSS/XSS_Reflected_2.png)
+![](/assets/images/Web/XSS/XSS_Reflected_2.png)
 
-![](../../assets/images/Web/XSS/XSS_Reflected_3.png)
+![](/assets/images/Web/XSS/XSS_Reflected_3.png)
 
-![](../../assets/images/Web/XSS/XSS_Reflected_4.png)
+![](/assets/images/Web/XSS/XSS_Reflected_4.png)
 
-![](../../assets/images/Web/XSS/XSS_Reflected_5.png)
+![](/assets/images/Web/XSS/XSS_Reflected_5.png)
 
 ## Remediation
 - **Input Validation:**
