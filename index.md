@@ -6,6 +6,9 @@ description: "The Cyber Grimoire"
 permalink: /
 ---
 
+![](../../assets/images/CG.jpg) 
+
+
 # Welcome to My Cybersecurity Journey
 
 I’m excited to share **Cyber Grimoire**, a personal project born from my desire to give back to the community that has given me so much. Like many of you, a lot of what I’ve learned about cybersecurity came from free resources generously shared by others. People took time out of their lives to create and distribute content that helped me grow, and now I want to do the same.
@@ -76,6 +79,6 @@ email, or any other method with the owners of this repository before making a ch
 This project uses **Jekyll** + **GitPages** as the "infrastructure", and uses a modified version of **Just-the-Docs** theme forr Jekyll.
 Thank you to the creators of these tools/technologies.
 
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages]: https://pages.github.com/
-[Just the Docs]: https://just-the-docs.com
+[Jekyll](https://jekyllrb.com)
+[GitHub Pages](https://pages.github.com/)
+[Just the Docs](https://just-the-docs.com)

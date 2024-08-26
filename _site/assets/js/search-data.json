@@ -575,14 +575,14 @@
   },"82": {
     "doc": "Home",
     "title": "Props!",
-    "content": "This project uses Jekyll + GitPages as the “infrastructure”, and uses a modified version of Just-the-Docs theme forr Jekyll. Thank you to the creators of these tools/technologies. ",
+    "content": "This project uses Jekyll + GitPages as the “infrastructure”, and uses a modified version of Just-the-Docs theme forr Jekyll. Thank you to the creators of these tools/technologies. Jekyll GitHub Pages Just the Docs . ",
     "url": "/#props",
     
     "relUrl": "/#props"
   },"83": {
     "doc": "Home",
     "title": "Home",
-    "content": " ",
+    "content": ". ",
     "url": "/",
     
     "relUrl": "/"
