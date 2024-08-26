@@ -9,7 +9,7 @@ permalink: /
 ![](../../assets/images/CG.jpg) 
 
 
-# Welcome to My Cybersecurity Journey
+# Welcome to Cyber Grimoire
 
 I’m excited to share **Cyber Grimoire**, a personal project born from my desire to give back to the community that has given me so much. Like many of you, a lot of what I’ve learned about cybersecurity came from free resources generously shared by others. People took time out of their lives to create and distribute content that helped me grow, and now I want to do the same.
 

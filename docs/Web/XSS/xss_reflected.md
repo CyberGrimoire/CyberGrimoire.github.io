@@ -8,7 +8,7 @@ grand_parent: Web
 
 # Reflected XSS (Cross-Site Scripting)
 
-
+ **[Template](https://cybergrimoire.github.io/docs/Templates/Web%20Templates/XSS_Reflected/)**
 
 
 
@@ -31,6 +31,7 @@ Reflected XSS attacks can have significant consequences depending on the context
   - **User Interaction:** Required
 
 ## Detection - Exploitation
+
 - **Detection:**
   - **Manual Testing:** 
     - Look for input fields, parameters, or URLs that reflect user input in the response.
@@ -46,14 +47,20 @@ Reflected XSS attacks can have significant consequences depending on the context
   - **Testing and Validation:**
     - If the script executes within the victim's browser without being sanitized, the vulnerability is confirmed.
 
+
+When we find a reflection of user input within the web application, there is potential for rreflected XSS.
 ![](/assets/images/Web/XSS/XSS_Reflected_1.png)
 
+After confirming the user input reflection, we can try and execute JavaScript. We caan use a simple payloaad like **alert('XSS')**
 ![](/assets/images/Web/XSS/XSS_Reflected_2.png)
 
+Aaaand we have an **aalert** pop-up show on screen, confirming the execution of JavaScript. This JavaScript will execute in the browser. When the browser loads the page, and the payload we sent, it parses it as legitimate code, and executes it.
 ![](/assets/images/Web/XSS/XSS_Reflected_3.png)
 
+We can now try a more interesting payload, and get sensitive infomation from the victim, as an example we are going to use **alert(document.cookie)**
 ![](/assets/images/Web/XSS/XSS_Reflected_4.png)
 
+Which gives us the cookies stored in the client/victim browser, cookies from the web application we are exploiting, within the pop-up alert box.
 ![](/assets/images/Web/XSS/XSS_Reflected_5.png)
 
 ## Remediation
@@ -72,3 +79,4 @@ Reflected XSS attacks can have significant consequences depending on the context
 - [OWASP Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
 - [PortSwigger Web Security Academy: Reflected XSS](https://portswigger.net/web-security/cross-site-scripting/reflected)
 - [Mozilla Developer Network (MDN): XSS Prevention](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)
+- [DVWA - DAMN VULNERABLE WEB APPLICATION](https://github.com/digininja/DVWA)

@@ -525,11 +525,11 @@
     "relUrl": "/docs/layout/minimal/default-child/"
   },"75": {
     "doc": "Home",
-    "title": "Welcome to My Cybersecurity Journey",
+    "title": "Welcome to Cyber Grimoire",
     "content": "I’m excited to share Cyber Grimoire, a personal project born from my desire to give back to the community that has given me so much. Like many of you, a lot of what I’ve learned about cybersecurity came from free resources generously shared by others. People took time out of their lives to create and distribute content that helped me grow, and now I want to do the same. ",
-    "url": "/#welcome-to-my-cybersecurity-journey",
+    "url": "/#welcome-to-cyber-grimoire",
     
-    "relUrl": "/#welcome-to-my-cybersecurity-journey"
+    "relUrl": "/#welcome-to-cyber-grimoire"
   },"76": {
     "doc": "Home",
     "title": "A Personal Project with a Purpose",
@@ -820,7 +820,7 @@
   },"117": {
     "doc": "XSS - Reflected",
     "title": "Reflected XSS (Cross-Site Scripting)",
-    "content": " ",
+    "content": "Template . ",
     "url": "/docs/Web/XSS/xss_reflected/#reflected-xss-cross-site-scripting",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#reflected-xss-cross-site-scripting"
@@ -848,7 +848,7 @@
   },"121": {
     "doc": "XSS - Reflected",
     "title": "Detection - Exploitation",
-    "content": ". | Detection: . | Manual Testing: . | Look for input fields, parameters, or URLs that reflect user input in the response. | Use tools like Burp Suite to analyze HTTP requests and responses. | . | Automated Tools: . | OWASP ZAP and Burp Suite offer automated XSS detection. | Browser-based XSS auditors, such as the ones built into Chrome or Firefox Developer Tools, can help identify reflected XSS vulnerabilities. | . | . | Exploitation: . | Crafting the Payload: . | Inject a payload such as &lt;script&gt;alert('XSS')&lt;/script&gt; into vulnerable parameters. | . | Delivering the Attack: . | Social engineering techniques are often used to trick victims into clicking on a malicious link. | . | Testing and Validation: . | If the script executes within the victim’s browser without being sanitized, the vulnerability is confirmed. | . | . | . ",
+    "content": ". | Detection: . | Manual Testing: . | Look for input fields, parameters, or URLs that reflect user input in the response. | Use tools like Burp Suite to analyze HTTP requests and responses. | . | Automated Tools: . | OWASP ZAP and Burp Suite offer automated XSS detection. | Browser-based XSS auditors, such as the ones built into Chrome or Firefox Developer Tools, can help identify reflected XSS vulnerabilities. | . | . | Exploitation: . | Crafting the Payload: . | Inject a payload such as &lt;script&gt;alert('XSS')&lt;/script&gt; into vulnerable parameters. | . | Delivering the Attack: . | Social engineering techniques are often used to trick victims into clicking on a malicious link. | . | Testing and Validation: . | If the script executes within the victim’s browser without being sanitized, the vulnerability is confirmed. | . | . | . When we find a reflection of user input within the web application, there is potential for rreflected XSS. After confirming the user input reflection, we can try and execute JavaScript. We caan use a simple payloaad like alert(‘XSS’) . Aaaand we have an aalert pop-up show on screen, confirming the execution of JavaScript. This JavaScript will execute in the browser. When the browser loads the page, and the payload we sent, it parses it as legitimate code, and executes it. We can now try a more interesting payload, and get sensitive infomation from the victim, as an example we are going to use alert(document.cookie) . Which gives us the cookies stored in the client/victim browser, cookies from the web application we are exploiting, within the pop-up alert box. ",
     "url": "/docs/Web/XSS/xss_reflected/#detection---exploitation",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#detection---exploitation"
@@ -862,7 +862,7 @@
   },"123": {
     "doc": "XSS - Reflected",
     "title": "References",
-    "content": ". | OWASP Cross-Site Scripting (XSS) | PortSwigger Web Security Academy: Reflected XSS | Mozilla Developer Network (MDN): XSS Prevention | . ",
+    "content": ". | OWASP Cross-Site Scripting (XSS) | PortSwigger Web Security Academy: Reflected XSS | Mozilla Developer Network (MDN): XSS Prevention | DVWA - DAMN VULNERABLE WEB APPLICATION | . ",
     "url": "/docs/Web/XSS/xss_reflected/#references",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#references"
