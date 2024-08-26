@@ -63,6 +63,9 @@ We can now try a more interesting payload, and get sensitive infomation from the
 Which gives us the cookies stored in the client/victim browser, cookies from the web application we are exploiting, within the pop-up alert box.
 ![](/assets/images/Web/XSS/XSS_Reflected_5.png)
 
+If the user input parameter comes in the URL, we can send the URL with the JavaScript payloaad to the victim and it will execute the payload on the victim's browser.
+![](/assets/images/Web/XSS/XSS_Reflected_6.png)
+
 ## Remediation
 - **Input Validation:**
   - Ensure that all user inputs are validated for allowed characters and data types.
