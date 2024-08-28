@@ -5,12 +5,13 @@ parent: XSS
 grand_parent: Templates
 ---
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulnerability Report</title>
+    <title>Reflected Cross-Site Scripting</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,137 +20,94 @@ grand_parent: Templates
         table {
             width: 100%;
             border-collapse: collapse;
-            border: 2px solid purple; /* Purple outline for the table */
+            border: 1px solid #a09aa3; /* Default light gray border */
+            background-color: #a09aa3;
+            box-sizing: border-box;
+            
         }
         th, td {
-            border: 1px solid purple; /* Purple outline for cells */
+            border: 1px solid #a0a0a0; /* Default light gray border */
             padding: 8px;
             text-align: left;
+            box-sizing: border-box;
+            column-span: 6;
         }
         th {
             background-color: #f2f2f2;
         }
-    </style>
-</head>
-<body>
+        table b, table strong {
+            color:#7253ed
 
-<h1>Vulnerability Report: [Vulnerability Name]</h1>
-
-<table>
-    <tr>
-        <td colspan="2" style="border: none; font-weight: bold; text-align: center;">
-            Vulnerability Name: [Vulnerability Name]
-        </td>
-    </tr>
-    <tr>
-        <td><b>Summary</b></td>
-        <td>A brief overview of the vulnerability.</td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <table style="width: 100%; border: none;">
-                <tr>
-                    <td><b>Criticity</b></td>
-                    <td>High/Medium/Low</td>
-                    <td><b>Endpoints</b></td>
-                    <td>/login, /api/data, /admin</td>
-                    <td><b>CVE</b></td>
-                    <td>CVE-2023-XXXXX</td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td><b>Description</b></td>
-        <td>Detailed explanation of the vulnerability.</td>
-    </tr>
-    <tr>
-        <td><b>Remediation</b></td>
-        <td>Steps to remediate the vulnerability.</td>
-    </tr>
-    <tr>
-        <td><b>Resources</b></td>
-        <td>Links to additional resources or references.</td>
-    </tr>
-</table>
-
-</body>
-</html>
-
-
-
-
-No borders 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulnerability Report</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #ddd; /* Default light gray border */
-        }
-        th, td {
-            border: 1px solid #ddd; /* Default light gray border */
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
         }
     </style>
 </head>
+
+
 <body>
+    <h1>Vulnerability Report Template</h1>
+    <table>
+        <tr>
+            <td colspan="6" style="border: none; font-weight: bold; text-align: center;">
+                Reflected Cross-Site Scripting
+            </td>
+        </tr>
 
-<h1>Vulnerability Report: [Vulnerability Name]</h1>
+        <tr>
+            <td colspan="6"><b>Summary:</b></td>
+        </tr>
 
-<table>
-    <tr>
-        <td colspan="2" style="border: none; font-weight: bold; text-align: center;">
-            Vulnerability Name: [Vulnerability Name]
-        </td>
-    </tr>
-    <tr>
-        <td><b>Summary</b></td>
-        <td>A brief overview of the vulnerability.</td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <table style="width: 100%; border: none;">
-                <tr>
-                    <td><b>Criticity</b></td>
-                    <td>High/Medium/Low</td>
-                    <td><b>Endpoints</b></td>
-                    <td>/login, /api/data, /admin</td>
-                    <td><b>CVE</b></td>
-                    <td>CVE-2023-XXXXX</td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td><b>Description</b></td>
-        <td>Detailed explanation of the vulnerability.</td>
-    </tr>
-    <tr>
-        <td><b>Remediation</b></td>
-        <td>Steps to remediate the vulnerability.</td>
-    </tr>
-    <tr>
-        <td><b>Resources</b></td>
-        <td>Links to additional resources or references.</td>
-    </tr>
-</table>
+        <tr>
+            <td colspan="6">
+                Summary description of the vulnerability
+            </td>
+        </tr>
 
+         <tr>
+            <td><b>Criticity:</b> High/Medium/Low</td>
+            <td><b>Endpoints:</b>
+                <ul>
+                    <li>https://www.google.com</li>
+                    <li>10.10.10.1/8</li>
+                    <li>/admin</li>
+                </ul>
+            </td>
+            <td><b>CVE:</b> CVE-2023-XXXXX</td>             
+        </tr>
+
+        <tr>
+            <td colspan="6"><b>Description:</b></td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                Detailed explanation of the vulnerability
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="6"><b>Remediation:</b></td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                Steps to remediate
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="6"><b>Resources:</b></td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                Links to additional resources
+            </td>
+        </tr>
+
+    </table>
 </body>
+
+
 </html>
 
+<td colspan="6">A brief overview of the vulnerability.</td>

@@ -11,8 +11,9 @@ Teste Templates
 
 # Vulnerability Report: [Vulnerability Name]
 
-|                     **Vulnerability Name**                         |
-|-----------------|--------------------------------------------------|
+|:-------------------------------------------------------------------|
+|                     **Vulnerability **                         |
+|:-----------------|--------------------------------------------------|
 | **Summary**     | A brief overview of the vulnerability.           |
 | **Criticity:** High| **Endpoints:** www.test.com | **CVE:** CVE-2023-XXXXX    |
 | **Description**                                                    |
