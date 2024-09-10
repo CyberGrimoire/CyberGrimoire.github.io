@@ -8,12 +8,16 @@ grand_parent: Web
 
 # Reflected XSS (Cross-Site Scripting)
 
- **[Template](https://cybergrimoire.github.io/docs/Templates/Web%20Templates/XSS_Reflected/)**
+ Vulnerability Reporting **[Template](https://cybergrimoire.github.io/docs/Templates/Web%20Templates/XSS_Reflected/)**
 
 
 
 ## Summary
-Reflected XSS, also known as non-persistent XSS, occurs when user-supplied data is immediately reflected back to the user by the web server without being properly sanitized or encoded. This type of XSS attack is typically delivered via a URL or a form submission, and the malicious script is executed within the browser of the victim who clicks on the crafted link.
+Reflected XSS, often called non-persistent XSS, happens when a website echoes back information submitted by a user without adequately cleaning it up or escaping harmful elements. This vulnerability can be exploited by an attacker who crafts a special URL or form that includes malicious JavaScript code. When another user clicks on this link or submits the form, the embedded JavaScript runs within their browser.
+
+This occurs because the web server uses the user's input directly in its response. For example, if you search for a term on a website, and the website immediately shows "Results for [your search term]", without checking if the input contains harmful scripts, an attacker could use this opportunity to inject a script instead of a simple search term. If the script is embedded in a URL and someone else clicks on it, the script will execute in their browser, leading to potential harm such as stealing cookies, capturing keyboard input, or other malicious activities.
+
+The key to preventing this type of attack is for websites to sanitize any data received from users, ensuring that any potentially dangerous scripts are neutralized before they can cause harm.
 
 ## Impact
 Reflected XSS attacks can have significant consequences depending on the context in which they are exploited:
@@ -32,13 +36,9 @@ Reflected XSS attacks can have significant consequences depending on the context
 
 ## Detection - Exploitation
 
-- **Detection:**
-  - **Manual Testing:** 
+##  How?
+- **Detection:** 
     - Look for input fields, parameters, or URLs that reflect user input in the response.
-    - Use tools like Burp Suite to analyze HTTP requests and responses.
-  - **Automated Tools:**
-    - **OWASP ZAP** and **Burp Suite** offer automated XSS detection.
-    - Browser-based XSS auditors, such as the ones built into Chrome or Firefox Developer Tools, can help identify reflected XSS vulnerabilities.
 - **Exploitation:**
   - **Crafting the Payload:** 
     - Inject a payload such as `<script>alert('XSS')</script>` into vulnerable parameters.
@@ -48,13 +48,13 @@ Reflected XSS attacks can have significant consequences depending on the context
     - If the script executes within the victim's browser without being sanitized, the vulnerability is confirmed.
 
 
-When we find a reflection of user input within the web application, there is potential for rreflected XSS.
+Upon finding a reflection of user input within the web application, there is potential for reflected XSS. Reflection meaning that the user input is getting sent (reflected) back to the user's browser without escaping/encoding special characters such as `<>`
 ![](/assets/images/Web/XSS/XSS_Reflected_1.png)
 
-After confirming the user input reflection, we can try and execute JavaScript. We caan use a simple payloaad like **alert('XSS')**
+After confirming the user input reflection, we can try and execute JavaScript. We caan use a simple payload like **alert('XSS')**
 ![](/assets/images/Web/XSS/XSS_Reflected_2.png)
 
-Aaaand we have an **aalert** pop-up show on screen, confirming the execution of JavaScript. This JavaScript will execute in the browser. When the browser loads the page, and the payload we sent, it parses it as legitimate code, and executes it.
+And we have an **alert** pop-up show on screen, confirming the execution of JavaScript. This JavaScript will execute in the browser. When the browser loads the page, and the payload we sent, it parses it as legitimate code, and executes it.
 ![](/assets/images/Web/XSS/XSS_Reflected_3.png)
 
 We can now try a more interesting payload, and get sensitive infomation from the victim, as an example we are going to use **alert(document.cookie)**
@@ -65,6 +65,51 @@ Which gives us the cookies stored in the client/victim browser, cookies from the
 
 If the user input parameter comes in the URL, we can send the URL with the JavaScript payloaad to the victim and it will execute the payload on the victim's browser.
 ![](/assets/images/Web/XSS/XSS_Reflected_6.png)
+
+## Why?
+
+The vulnerability arises because the application: 
+- Does not adequately sanitize user-supplied input, allowing scripts to be included.
+- Directly reflects user input in HTTP responses.
+- Fails to encode or escape outputs when generating output in HTML, making it susceptible to script injection.
+
+An example of such vulnerability in code:
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reflected XSS Demo</title>
+</head>
+<body>
+    <h1>Search</h1>
+    <form action="" method="GET">
+        <label for="query">Enter your search term:</label>
+        <input type="text" id="query" name="query">
+        <input type="submit" value="Search">
+    </form>
+
+    <p>You searched for: </p>
+    <div id="results">
+        <!-- This is where the reflected XSS vulnerability occurs -->
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            if (query) {
+                document.write(query);  // Use document.write to directly write user input
+            }
+        </script>
+    </div>
+</body>
+</html>
+<!-- Within HTML so you can see how it works locally, save the code and run it on your browser-->
+```
+
+If `query = urlParams.get('query');` is inserted without sanitization, it's vulnerable to XSS.
+The simplest payload you can try and check for XSS is:
+```javascript
+<script>alert('XSS Vulnerability!');</script>
+```
 
 ## Remediation
 - **Input Validation:**
@@ -83,3 +128,5 @@ If the user input parameter comes in the URL, we can send the URL with the JavaS
 - [PortSwigger Web Security Academy: Reflected XSS](https://portswigger.net/web-security/cross-site-scripting/reflected)
 - [Mozilla Developer Network (MDN): XSS Prevention](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)
 - [DVWA - DAMN VULNERABLE WEB APPLICATION](https://github.com/digininja/DVWA)
+- [OWASP XSS Prevention CheatSheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+

@@ -45,7 +45,7 @@ grand_parent: Templates
 
 <body>
     <h1>Vulnerability Report Template</h1>
-    <table>
+    <table id="VulnTable">
         <tr>
             <td colspan="6" style="border: none; font-weight: bold; text-align: center;">
                 Reflected Cross-Site Scripting
@@ -105,9 +105,189 @@ grand_parent: Templates
         </tr>
 
     </table>
+
+    <!-- Button to copy the table -->
+    <button id="copyButton">Copy Table to Clipboard</button>
+
+    <script>
+    document.getElementById("copyButton").addEventListener("click", copyTable);
+
+    function copyTable() {
+    // Get the table element
+    var table = document.getElementById("VulnTable");
+
+    // Create a temporary textarea element to hold the HTML content
+    var tempTextArea = document.createElement("textarea");
+
+    // Set the value of the textarea to the innerHTML of the table
+    tempTextArea.value = table.outerHTML;
+
+    // Append the textarea to the body (required to copy content)
+    document.body.appendChild(tempTextArea);
+
+    // Select the textarea content
+    tempTextArea.select();
+
+    // Copy the content to the clipboard
+    try {
+        var successful = document.execCommand('copy');
+        if (successful) {
+            alert("Table copied to clipboard!");
+        } else {
+            alert("Failed to copy table.");
+        }
+    } catch (err) {
+        alert("Oops, unable to copy");
+    }
+    
+    // Remove the temporary textarea
+    document.body.removeChild(tempTextArea);
+}
+    </script>
+
 </body>
-
-
 </html>
 
-<td colspan="6">A brief overview of the vulnerability.</td>
+
+Teste Templates
+
+
+
+# Vulnerability Report: [Vulnerability Name]
+
+|:-------------------------------------------------------------------|
+|                     **Vulnerability **                         |
+|:-----------------|--------------------------------------------------|
+| **Summary**     | A brief overview of the vulnerability.           |
+| **Criticity:** High| **Endpoints:** www.test.com | **CVE:** CVE-2023-XXXXX    |
+| **Description**                                                    |
+| Detailed explanation of the vulnerability.                         |
+| **Remediation** | Steps to remediate the vulnerability.            |
+| **Resources**   | Links to additional resources or references.     |
+
+| **Criticity** | **Endpoints**            | **CVE**       |
+|---------------|--------------------------|---------------|
+| High          | /login, /api/data, /admin | CVE-2023-XXXXX |
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerability Report Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #a09aa3; /* Default light gray border */
+            background-color: #a09aa3;
+            box-sizing: border-box;
+        }
+        th, td {
+            border: 1px solid #a0a0a0; /* Default light gray border */
+            padding: 8px;
+            text-align: left;
+            box-sizing: border-box;
+            column-span: 6;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        table b, table strong {
+            color: #7253ed;
+        }
+
+        /* Scrollable content section */
+        .scrollable-content {
+            background-color: #f4f4f4;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #888;
+            max-height: 300px; /* Set max height for scrolling */
+            overflow-y: auto; /* Enable scrolling */
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
+            display: none; /* Hidden initially */
+        }
+    </style>
+</head>
+<body>
+
+
+
+<h1>Vulnerability Report Template</h1>
+<table id="VulnTable">
+    <tr>
+        <td colspan="6" style="border: none; font-weight: bold; text-align: center;">
+            Reflected Cross-Site Scripting
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Summary:</b></td>
+    </tr>
+
+    <tr>
+        <td colspan="6">
+            Summary description of the vulnerability
+        </td>
+    </tr>
+
+    <tr>
+        <td><b>Criticity:</b> High/Medium/Low</td>
+        <td><b>Endpoints:</b>
+            <ul>
+                <li>https://www.google.com</li>
+                <li>10.10.10.1/8</li>
+                <li>/admin</li>
+            </ul>
+        </td>
+        <td><b>CVE:</b> CVE-2023-XXXXX</td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Description:</b></td>
+    </tr>
+
+    <tr>
+        <td colspan="6">
+            Detailed explanation of the vulnerability
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Remediation:</b></td>
+    </tr>
+
+    <tr>
+        <td colspan="6">
+            Steps to remediate
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="6"><b>Resources:</b></td>
+    </tr>
+
+    <tr>
+        <td colspan="6">
+            Links to additional resources
+        </td>
+    </tr>
+
+</table>
+
+<!-- Button to show scrollable content -->
+<button id="copyButton">Show Table to Copy</button>
+
+<!-- Scrollable content area -->
+<div id="scrollableContent" class="scrollable-content"></div>
+
+</body>
+</html>
+
