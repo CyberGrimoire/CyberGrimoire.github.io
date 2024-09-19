@@ -75,8 +75,8 @@ email, or any other method with the owners of this repository before making a ch
 
 ## Props!
 
-This project uses **Jekyll** + **GitPages** as the "infrastructure", and uses a modified version of **Just-the-Docs** theme forr Jekyll.
-Thank you to the creators of these tools/technologies.
+This project uses **Jekyll** + **GitPages** and a modified version of **Just-the-Docs** theme for Jekyll.
+Thank you to the creators of these!
 
 [Jekyll](https://jekyllrb.com)
 [GitHub Pages](https://pages.github.com/)

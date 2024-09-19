@@ -300,608 +300,664 @@
     
     "relUrl": "/CHANGELOG/#v011"
   },"43": {
+    "doc": "CSRF",
+    "title": "Summary",
+    "content": "Cross-Site Request Forgery (CSRF) is a web security vulnerability that forces an authenticated user to perform unwanted actions on a web application in which they are authenticated. By tricking the user into making requests, an attacker can carry out actions like changing account details or making transactions, without the user’s knowledge or intent. ",
+    "url": "/docs/Web/CSRF/#summary",
+    
+    "relUrl": "/docs/Web/CSRF/#summary"
+  },"44": {
+    "doc": "CSRF",
+    "title": "Impact",
+    "content": "Cross-Site Request Forgery (CSRF) attacks can lead to severe consequences, such as: . | Unauthorized Actions: Attackers can perform actions on behalf of authenticated users without their knowledge. | Account Takeover: Attackers can change user settings, transfer funds, or modify account details. | Data Loss: Sensitive user information could be modified or deleted. | Privilege Escalation: In some cases, attackers could escalate privileges within the application. | Service Disruption: Critical services or accounts may be impacted by unauthorized actions. | . ",
+    "url": "/docs/Web/CSRF/#impact",
+    
+    "relUrl": "/docs/Web/CSRF/#impact"
+  },"45": {
+    "doc": "CSRF",
+    "title": "Severity (CVSS)",
+    "content": "Severity based on CVSS: . | Base Score: Typically ranges between 6.0 (Medium) to 8.8 (High) depending on the potential impact and context. | Attack Vector: Network | Attack Complexity: Low | Privileges Required: None | User Interaction: Required (victim must interact with the malicious request, e.g., by clicking a link) | . ",
+    "url": "/docs/Web/CSRF/#severity-cvss",
+    
+    "relUrl": "/docs/Web/CSRF/#severity-cvss"
+  },"46": {
+    "doc": "CSRF",
+    "title": "How it is Exploited",
+    "content": "Victim Authentication: The user must be logged into the target web application. Malicious Request: The attacker tricks the victim into visiting a malicious site or clicking a crafted link (via email, social engineering, etc.). Silent Action: The malicious site sends an HTTP request to the legitimate web application on behalf of the user, leveraging their active session. For example: . &lt;img src=\"https://victim.com/change-email?email=hacker@evil.com\" /&gt; . Unintended Action: The legitimate application, assuming the request is coming from the authenticated user, executes the action. ",
+    "url": "/docs/Web/CSRF/#how-it-is-exploited",
+    
+    "relUrl": "/docs/Web/CSRF/#how-it-is-exploited"
+  },"47": {
+    "doc": "CSRF",
+    "title": "Why it is Vulnerable",
+    "content": "CSRF vulnerabilities arise because web applications rely on cookies for authentication. Even if a user is unaware, their browser will automatically include these cookies in every request to the application. If the application does not verify the origin or intent of requests, it blindly executes them, allowing attackers to exploit the session of authenticated users. ",
+    "url": "/docs/Web/CSRF/#why-it-is-vulnerable",
+    
+    "relUrl": "/docs/Web/CSRF/#why-it-is-vulnerable"
+  },"48": {
+    "doc": "CSRF",
+    "title": "Remediation",
+    "content": "To protect against CSRF: . Anti-CSRF Tokens: Include unique, random tokens in forms or requests. The server should validate this token before processing the request. &lt;input type=\"hidden\" name=\"csrf_token\" value=\"randomlyGeneratedToken\"&gt; . SameSite Cookies: Set the SameSite attribute on cookies to restrict cross-site requests. Set-Cookie: sessionId=abc123; SameSite=Strict; . Double Submit Cookie: Use a CSRF token in both the cookie and request header, comparing the two on the server. Referer Validation: Ensure the Referer or Origin header matches the legitimate domain before processing requests. Limit the use of GET for State-Changing Operations: Use POST or other methods for actions that change application state. ",
+    "url": "/docs/Web/CSRF/#remediation",
+    
+    "relUrl": "/docs/Web/CSRF/#remediation"
+  },"49": {
+    "doc": "CSRF",
+    "title": "Content References",
+    "content": ". | OWASP: Cross-Site Request Forgery (CSRF) | MDN Web Docs: Cross-Site Request Forgery | CSRF Prevention in Web Applications | . ",
+    "url": "/docs/Web/CSRF/#content-references",
+    
+    "relUrl": "/docs/Web/CSRF/#content-references"
+  },"50": {
+    "doc": "CSRF",
+    "title": "CSRF",
+    "content": " ",
+    "url": "/docs/Web/CSRF/",
+    
+    "relUrl": "/docs/Web/CSRF/"
+  },"51": {
     "doc": "Templates",
     "title": "Templates",
     "content": "Here you can find all templates . ",
     "url": "/docs/Templates",
     
     "relUrl": "/docs/Templates"
-  },"44": {
+  },"52": {
     "doc": "XSS - Testes",
     "title": "Feedback Form",
     "content": "Enter your feedback: Submit . ",
     "url": "/docs/Templates/Web%20Templates/Testes/",
     
     "relUrl": "/docs/Templates/Web%20Templates/Testes/"
-  },"45": {
+  },"53": {
     "doc": "XSS - Testes",
     "title": "XSS - Testes",
     "content": "&lt;!DOCTYPE html&gt; . Simple XSS Example . ",
     "url": "/docs/Templates/Web%20Templates/Testes/",
     
     "relUrl": "/docs/Templates/Web%20Templates/Testes/"
-  },"46": {
+  },"54": {
     "doc": "XSS",
     "title": "XSS",
     "content": "Cross-Site Scripting Templates . ",
     "url": "/docs/Templates",
     
     "relUrl": "/docs/Templates"
-  },"47": {
+  },"55": {
     "doc": "XSS - Reflected",
     "title": "Vulnerability Report Template",
     "content": "| Reflected Cross-Site Scripting | . | Summary: | . | Reflected Cross-Site Scripting (XSS) is a vulnerability where attackers inject malicious scripts via user inputs that are immediately reflected in the website's response. This allows the attacker to steal data, hijack sessions, or trick users. The issue arises from improper validation of user inputs and can be prevented through proper input sanitization and output encoding. | . | Criticity: High/Medium | Endpoints: . | https://www.vulnerable_endpoint.com | 10.10.10.1/24 | /specific_page_endpoint | . | CVE: N/A | . | Description: | . | Reflected XSS occurs when user input, such as query parameters or form data, is reflected in the server's response without proper sanitization or encoding. In [Affected Company], endpoints like [Vulnerable Endpoint 1] and [Vulnerable Endpoint 2] allow attackers to inject malicious scripts, which are executed in the victim’s browser. This can lead to session hijacking, data theft, or unauthorized actions. | . | Remediation: | . | . | Implement X-XSS-Protection Header | Use Security-Focused Libraries | Input Validation | Output Encoding | Implement Content Security Policy(CSP) | . | . | Resources: | . | . | https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html | https://portswigger.net/web-security/cross-site-scripting/reflected | . | . *Adapt the table values to your test and context* . ",
     "url": "/docs/Templates/Web%20Templates/XSS_Reflected/",
     
     "relUrl": "/docs/Templates/Web%20Templates/XSS_Reflected/"
-  },"48": {
+  },"56": {
     "doc": "XSS - Reflected",
     "title": "XSS - Reflected",
     "content": "Vulnerability Report Template . ",
     "url": "/docs/Templates/Web%20Templates/XSS_Reflected/",
     
     "relUrl": "/docs/Templates/Web%20Templates/XSS_Reflected/"
-  },"49": {
+  },"57": {
     "doc": "XSS - Test HTML",
     "title": "Vulnerability Report Template",
     "content": "| Reflected Cross-Site Scripting | . | Summary: | . | Summary description of the vulnerability | . | Criticity: High/Medium/Low | Endpoints: . | https://www.google.com | 10.10.10.1/8 | /admin | . | CVE: CVE-2023-XXXXX | . | Description: | . | Detailed explanation of the vulnerability | . | Remediation: | . | Steps to remediate | . | Resources: | . | Links to additional resources | . Copy Table to Clipboard . Teste Templates # Vulnerability Report: [Vulnerability Name] |:-------------------------------------------------------------------| **Vulnerability ** |:-----------------|--------------------------------------------------| **Summary** | A brief overview of the vulnerability. | **Criticity:** High| **Endpoints:** www.test.com | **CVE:** CVE-2023-XXXXX | **Description** | Detailed explanation of the vulnerability. | **Remediation** | Steps to remediate the vulnerability. | **Resources** | Links to additional resources or references. | **Criticity** | **Endpoints** | **CVE** |---------------|--------------------------|---------------| High | /login, /api/data, /admin | CVE-2023-XXXXX | Vulnerability Report Template . ",
     "url": "/docs/Templates/Web%20Templates/XSS_Test/",
     
     "relUrl": "/docs/Templates/Web%20Templates/XSS_Test/"
-  },"50": {
+  },"58": {
     "doc": "XSS - Test HTML",
     "title": "Vulnerability Report Template",
     "content": "| Reflected Cross-Site Scripting | . | Summary: | . | Summary description of the vulnerability | . | Criticity: High/Medium/Low | Endpoints: . | https://www.google.com | 10.10.10.1/8 | /admin | . | CVE: CVE-2023-XXXXX | . | Description: | . | Detailed explanation of the vulnerability | . | Remediation: | . | Steps to remediate | . | Resources: | . | Links to additional resources | . Show Table to Copy . ",
     "url": "/docs/Templates/Web%20Templates/XSS_Test/",
     
     "relUrl": "/docs/Templates/Web%20Templates/XSS_Test/"
-  },"51": {
+  },"59": {
     "doc": "XSS - Test HTML",
     "title": "XSS - Test HTML",
     "content": "Reflected Cross-Site Scripting . ",
     "url": "/docs/Templates/Web%20Templates/XSS_Test/",
     
     "relUrl": "/docs/Templates/Web%20Templates/XSS_Test/"
-  },"52": {
+  },"60": {
     "doc": "Buttons",
     "title": "Buttons",
     "content": " ",
     "url": "/docs/ui-components/buttons/",
     
     "relUrl": "/docs/ui-components/buttons/"
-  },"53": {
+  },"61": {
     "doc": "Buttons",
     "title": "Table of contents",
     "content": ". | Basic button styles . | Links that look like buttons | Button element | . | Using utilities with buttons . | Button size | Spacing between buttons | . | . ",
     "url": "/docs/ui-components/buttons/#table-of-contents",
     
     "relUrl": "/docs/ui-components/buttons/#table-of-contents"
-  },"54": {
+  },"62": {
     "doc": "Buttons",
     "title": "Basic button styles",
     "content": "Links that look like buttons . Link button . Link button Link button Link button . Link button . [Link button](https://just-the-docs.com){: .btn } [Link button](https://just-the-docs.com){: .btn .btn-purple } [Link button](https://just-the-docs.com){: .btn .btn-blue } [Link button](https://just-the-docs.com){: .btn .btn-green } [Link button](https://just-the-docs.com){: .btn .btn-outline } . Button element . GitHub Flavored Markdown does not support the button element, so you’ll have to use inline HTML for this: . Button element &lt;button type=\"button\" name=\"button\" class=\"btn\"&gt;Button element&lt;/button&gt; . ",
     "url": "/docs/ui-components/buttons/#basic-button-styles",
     
     "relUrl": "/docs/ui-components/buttons/#basic-button-styles"
-  },"55": {
+  },"63": {
     "doc": "Buttons",
     "title": "Using utilities with buttons",
     "content": "Button size . Wrap the button in a container that uses the font-size utility classes to scale buttons: . Big ass button . Tiny ass button . &lt;span class=\"fs-8\"&gt; [Link button](https://just-the-docs.com){: .btn } &lt;/span&gt; &lt;span class=\"fs-3\"&gt; [Tiny ass button](https://just-the-docs.com){: .btn } &lt;/span&gt; . Spacing between buttons . Use the margin utility classes to add spacing between two buttons in the same block. Button with space Button . Button with more space Button . [Button with space](https://just-the-docs.com){: .btn .btn-purple .mr-2 } [Button](https://just-the-docs.com){: .btn .btn-blue } [Button with more space](https://just-the-docs.com){: .btn .btn-green .mr-4 } [Button](https://just-the-docs.com){: .btn .btn-blue } . ",
     "url": "/docs/ui-components/buttons/#using-utilities-with-buttons",
     
     "relUrl": "/docs/ui-components/buttons/#using-utilities-with-buttons"
-  },"56": {
+  },"64": {
     "doc": "Callouts",
     "title": "Callouts",
     "content": "New (v0.4.0) . Markdown does not include support for callouts. However, you can style text as a callout using a Markdown extension supported by kramdown: block IALs. Common kinds of callouts include highlight, important, new, note, and warning. These callout names are not pre-defined by the theme: you need to define your own names. When you have [configured] the color and (optional) title for a callout, you can apply it to a paragraph, or to a block quote with several paragraphs, as illustrated below.1 . An untitled callout . {: .highlight } A paragraph . A paragraph . A single paragraph callout . {: .note } A paragraph . A paragraph . {: .note-title } &gt; My note title &gt; &gt; A paragraph with a custom title callout . My note title . A paragraph with a custom title callout . A multi-paragraph callout . {: .important } &gt; A paragraph &gt; &gt; Another paragraph &gt; &gt; The last paragraph . A paragraph . Another paragraph . The last paragraph . {: .important-title } &gt; My important title &gt; &gt; A paragraph &gt; &gt; Another paragraph &gt; &gt; The last paragraph . My important title . A paragraph . Another paragraph . The last paragraph . An indented callout . &gt; {: .highlight } A paragraph . A paragraph . Indented multi-paragraph callouts . &gt; {: .new } &gt; &gt; A paragraph &gt; &gt; &gt; &gt; Another paragraph &gt; &gt; &gt; &gt; The last paragraph . A paragraph . Another paragraph . The last paragraph . Nested callouts . {: .important } &gt; {: .warning } &gt; A paragraph . A paragraph . Opaque background . {: .important } &gt; {: .opaque } &gt; &lt;div markdown=\"block\"&gt; &gt; {: .warning } &gt; A paragraph &gt; &lt;/div&gt; . A paragraph . | You can put the callout markup either before or after its content. &#8617; . | . ",
     "url": "/docs/ui-components/callouts/",
     
     "relUrl": "/docs/ui-components/callouts/"
-  },"57": {
+  },"65": {
     "doc": "Code",
     "title": "Code",
     "content": " ",
     "url": "/docs/ui-components/code/",
     
     "relUrl": "/docs/ui-components/code/"
-  },"58": {
+  },"66": {
     "doc": "Code",
     "title": "Table of contents",
     "content": ". | Inline code | Syntax highlighted code blocks | Code blocks with rendered examples | Mermaid diagram code blocks . | Using a local mermaid library | Using mermaid with AsciiDoc | . | Copy button | . ",
     "url": "/docs/ui-components/code/#table-of-contents",
     
     "relUrl": "/docs/ui-components/code/#table-of-contents"
-  },"59": {
+  },"67": {
     "doc": "Code",
     "title": "Inline code",
     "content": "Code can be rendered inline by wrapping it in single back ticks. Lorem ipsum dolor sit amet, &lt;inline code snippet&gt; adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     "url": "/docs/ui-components/code/#inline-code",
     
     "relUrl": "/docs/ui-components/code/#inline-code"
-  },"60": {
+  },"68": {
     "doc": "Code",
     "title": "Heading with &lt;inline code snippet&gt; in it.",
     "content": "Lorem ipsum dolor sit amet, `&lt;inline code snippet&gt;` adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ## Heading with `&lt;inline code snippet&gt;` in it. ",
     "url": "/docs/ui-components/code/#heading-with-inline-code-snippet-in-it",
     
     "relUrl": "/docs/ui-components/code/#heading-with-inline-code-snippet-in-it"
-  },"61": {
+  },"69": {
     "doc": "Code",
     "title": "Syntax highlighted code blocks",
     "content": "Use Jekyll’s built-in syntax highlighting with Rouge for code blocks by using three backticks, followed by the language name: . // Javascript code with syntax highlighting. var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } . ```js // Javascript code with syntax highlighting. var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } ``` . Syntax highlighting, line numbers, and HTML compression do not work together; the combination of these features generates invalid HTML that renders incorrectly. To learn more, see “Code with line numbers”. ",
     "url": "/docs/ui-components/code/#syntax-highlighted-code-blocks",
     
     "relUrl": "/docs/ui-components/code/#syntax-highlighted-code-blocks"
-  },"62": {
+  },"70": {
     "doc": "Code",
     "title": "Code blocks with rendered examples",
     "content": "To demonstrate front end code, sometimes it’s useful to show a rendered example of that code. After including the styles from your project that you’ll need to show the rendering, you can use a &lt;div&gt; with the code-example class, followed by the code block syntax. If you want to render your output with Markdown instead of HTML, use the markdown=\"1\" attribute to tell Jekyll that the code you are rendering will be in Markdown format… This is about to get meta… . Link button . [Link button](https://just-the-docs.com){: .btn } . &lt;div class=\"code-example\" markdown=\"1\"&gt; [Link button](https://just-the-docs.com){: .btn } &lt;/div&gt; ```markdown [Link button](https://just-the-docs.com){: .btn } ``` . ",
     "url": "/docs/ui-components/code/#code-blocks-with-rendered-examples",
     
     "relUrl": "/docs/ui-components/code/#code-blocks-with-rendered-examples"
-  },"63": {
+  },"71": {
     "doc": "Code",
     "title": "Mermaid diagram code blocks",
     "content": "New (v0.4.0) . Mermaid allows you to add diagrams and visualizations using Markdown code blocks. It is disabled by default. However, you can turn on support for mermaid by adding a mermaid key to your _config.yml. The minimum configuration requires a version key (matching a version in jsDelivr): . mermaid: # Version of mermaid library # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/ version: \"9.1.3\" . Additional configuration options are loaded through _includes/mermaid_config.js. By default, the contents of the file are the empty object: . // _includes/mermaid_config.js {} . This loads the default settings. The contents of this object should follow mermaid’s configuration API. For example, to override the theme, change _includes/mermaid_config.js to: . // _includes/mermaid_config.js { theme: \"forest\" } . Once mermaid is installed, it can be used in markdown files. The markdown for a simple flowchart example might look like the following: . ```mermaid graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; ``` . which renders: . graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; . Note: for demonstration purposes, we’ve enabled mermaid on this site. It is still disabled by default, and users need to opt-in to use it. Using a local mermaid library . To load a local version of mermaid, also use the path key to specify the location of the library; e.g. mermaid: version: \"10.1.0\" # for (v10+) path: \"/assets/js/mermaid.esm.min.mjs\" # for (&lt;v10): # path: \"/assets/js/mermaid.min.js\" # Note: copy both `mermaid.esm.min.mjs` (v10+) or `mermaid.min.js` (&lt;v10) and the associated # `.map` file from the specified version of `mermaid/dist` to `/assets/js/`. For mermaid versions &gt;=10, this file is imported directly as an ESM module (rather than as a plain &lt;script&gt; tag); users should use the mermaid.esm.min.mjs file. In contrast, for mermaid versions &lt;10, this file is loaded as a script tag; it should be a standalone CJS file (i.e. mermaid.min.js). Mermaid versions 10.0 - 10.1 (and possibly, future releases) still encode relative imports in mermaid.esm.min.mjs. Local users must copy all of the contents of the dist folder to the specified path (preserving the relative location of the files). Just the Docs is actively monitoring mermaid releases; an upstream fix is planned. Using mermaid with AsciiDoc . Users of AsciiDoc (e.g. via jekyll-asciidoc) may need additional configuration to use mermaid. By default, AsciiDoc generates HTML markup that mermaid cannot properly parse. The simplest way to resolve this is to use a passthrough block: . ++++ &lt;pre class=\"language-mermaid\"&gt; graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; &lt;/pre&gt; ++++ . Alternatively, community member @flyx has contributed a Ruby extension that does not require extra markup. The extension is available as a GitHub Gist. Thank you to @flyx! . The asciidoctor-diagram extension which also supports mermaid is not recommended for use with Just the Docs, since it requires separate configuration e.g. for theming, and is known to not be trivial to set up. ",
     "url": "/docs/ui-components/code/#mermaid-diagram-code-blocks",
     
     "relUrl": "/docs/ui-components/code/#mermaid-diagram-code-blocks"
-  },"64": {
+  },"72": {
     "doc": "Code",
     "title": "Copy button",
     "content": "New (v0.4.0) . The copy button for code blocks can be enabled or disabled via the enable_copy_code_button key in _config.yml. By default, the value of this key is false; users need to opt-in. # For copy button on code enable_copy_code_button: true . Note that this feature requires JavaScript; if JavaScript is disabled in the browser, this feature will not work. In addition, this feature uses navigator.clipboard, which is only available in secure contexts (such as over HTTPS). If the site is viewed in an insecure context, the copy button will not work (relevant issue: #1202). ",
     "url": "/docs/ui-components/code/#copy-button",
     
     "relUrl": "/docs/ui-components/code/#copy-button"
-  },"65": {
+  },"73": {
     "doc": "Color",
     "title": "Color Utilities",
     "content": " ",
     "url": "/docs/utilities/color/#color-utilities",
     
     "relUrl": "/docs/utilities/color/#color-utilities"
-  },"66": {
+  },"74": {
     "doc": "Color",
     "title": "Table of contents",
     "content": ". | Light Greys | Dark Greys | Purples | Blues | Greens | Yellows | Reds | . All the colors used in Just the Docs have been systematized into a series of variables that have been extended to both font color and background color utility classes. ",
     "url": "/docs/utilities/color/#table-of-contents",
     
     "relUrl": "/docs/utilities/color/#table-of-contents"
-  },"67": {
+  },"75": {
     "doc": "Color",
     "title": "Light Greys",
     "content": "| Color value | Font color utility | Background color utility | . | grey-lt-000 | .text-grey-lt-000 | .bg-grey-lt-000 | . | grey-lt-100 | .text-grey-lt-100 | .bg-grey-lt-100 | . | grey-lt-200 | .text-grey-lt-200 | .bg-grey-lt-200 | . | grey-lt-300 | .text-grey-lt-300 | .bg-grey-lt-300 | . ",
     "url": "/docs/utilities/color/#light-greys",
     
     "relUrl": "/docs/utilities/color/#light-greys"
-  },"68": {
+  },"76": {
     "doc": "Color",
     "title": "Dark Greys",
     "content": "| Color value | Font color utility | Background color utility | . | grey-dk-000 | .text-grey-dk-000 | .bg-grey-dk-000 | . | grey-dk-100 | .text-grey-dk-100 | .bg-grey-dk-100 | . | grey-dk-200 | .text-grey-dk-200 | .bg-grey-dk-200 | . | grey-dk-250 | .text-grey-dk-250 | .bg-grey-dk-250 | . | grey-dk-300 | .text-grey-dk-300 | .bg-grey-dk-300 | . ",
     "url": "/docs/utilities/color/#dark-greys",
     
     "relUrl": "/docs/utilities/color/#dark-greys"
-  },"69": {
+  },"77": {
     "doc": "Color",
     "title": "Purples",
     "content": "| Color value | Font color utility | Background color utility | . | purple-000 | .text-purple-000 | .bg-purple-000 | . | purple-100 | .text-purple-100 | .bg-purple-100 | . | purple-200 | .text-purple-200 | .bg-purple-200 | . | purple-300 | .text-purple-300 | .bg-purple-300 | . ",
     "url": "/docs/utilities/color/#purples",
     
     "relUrl": "/docs/utilities/color/#purples"
-  },"70": {
+  },"78": {
     "doc": "Color",
     "title": "Blues",
     "content": "| Color value | Font color utility | Background color utility | . | blue-000 | .text-blue-000 | .bg-blue-000 | . | blue-100 | .text-blue-100 | .bg-blue-100 | . | blue-200 | .text-blue-200 | .bg-blue-200 | . | blue-300 | .text-blue-300 | .bg-blue-300 | . ",
     "url": "/docs/utilities/color/#blues",
     
     "relUrl": "/docs/utilities/color/#blues"
-  },"71": {
+  },"79": {
     "doc": "Color",
     "title": "Greens",
     "content": "| Color value | Font color utility | Background color utility | . | green-000 | .text-green-000 | .bg-green-000 | . | green-100 | .text-green-100 | .bg-green-100 | . | green-200 | .text-green-200 | .bg-green-200 | . | green-300 | .text-green-300 | .bg-green-300 | . ",
     "url": "/docs/utilities/color/#greens",
     
     "relUrl": "/docs/utilities/color/#greens"
-  },"72": {
+  },"80": {
     "doc": "Color",
     "title": "Yellows",
     "content": "| Color value | Font color utility | Background color utility | . | yellow-000 | .text-yellow-000 | .bg-yellow-000 | . | yellow-100 | .text-yellow-100 | .bg-yellow-100 | . | yellow-200 | .text-yellow-200 | .bg-yellow-200 | . | yellow-300 | .text-yellow-300 | .bg-yellow-300 | . ",
     "url": "/docs/utilities/color/#yellows",
     
     "relUrl": "/docs/utilities/color/#yellows"
-  },"73": {
+  },"81": {
     "doc": "Color",
     "title": "Reds",
     "content": "| Color value | Font color utility | Background color utility | . | red-000 | .text-red-000 | .bg-red-000 | . | red-100 | .text-red-100 | .bg-red-100 | . | red-200 | .text-red-200 | .bg-red-200 | . | red-300 | .text-red-300 | .bg-red-300 | . ",
     "url": "/docs/utilities/color/#reds",
     
     "relUrl": "/docs/utilities/color/#reds"
-  },"74": {
+  },"82": {
     "doc": "Color",
     "title": "Color",
     "content": " ",
     "url": "/docs/utilities/color/",
     
     "relUrl": "/docs/utilities/color/"
-  },"75": {
+  },"83": {
     "doc": "Default layout child page",
     "title": "Default layout child page",
     "content": "This is a child page that uses the same minimal layout as its parent page. ",
     "url": "/docs/layout/minimal/default-child/",
     
     "relUrl": "/docs/layout/minimal/default-child/"
-  },"76": {
+  },"84": {
     "doc": "Home",
     "title": "Welcome to Cyber Grimoire",
     "content": "In the vast digital landscape, I’ve been fortunate to uncover the knowledge shared by those who came before me, guardians of cybersecurity wisdom who offered their insights freely. Cyber Grimoire is my way of contributing to this collective well of knowledge. Just as ancient grimoires were filled with secrets passed down through generations, this project is my offering to the community, a repository of what I’ve learned along my journey through the domain of cybersecurity. The knowledge contained within these pages is a reflection of the generosity of those who shared their time and expertise. Now, it’s my turn to give back, weaving together what I’ve gathered into a resource for others who seek to navigate the complex, ever-evolving realms of digital security. ",
     "url": "/#welcome-to-cyber-grimoire",
     
     "relUrl": "/#welcome-to-cyber-grimoire"
-  },"77": {
+  },"85": {
     "doc": "Home",
     "title": "A Personal Project with a Purpose",
     "content": "This project is my way of contributing what I’ve learned back to the community. It’s a space where I document my journey through the world of cybersecurity—sharing knowledge, tips, and insights that I’ve picked up along the way. Think of it as an ever-evolving journal, where I continue to add new information as I come across it. My hope is that it can serve as a useful resource for others who are on a similar path. ",
     "url": "/#a-personal-project-with-a-purpose",
     
     "relUrl": "/#a-personal-project-with-a-purpose"
-  },"78": {
+  },"86": {
     "doc": "Home",
     "title": "A Community Effort",
     "content": "While this started as a personal project, I envision it growing into a community-driven effort. If you have knowledge, notes, or insights you’d like to share, I warmly invite you to contribute. This project isn’t about personal gain or recognition; it’s about creating something valuable and freely available for everyone. If you’re passionate about cybersecurity and want to share what you know, your contributions are more than welcome. ",
     "url": "/#a-community-effort",
     
     "relUrl": "/#a-community-effort"
-  },"79": {
+  },"87": {
     "doc": "Home",
     "title": "No Profit, Just Passion",
     "content": "There’s no profit motive behind this project—just a genuine interest in the subject, a desire to learn, and a commitment to sharing what I know with others. I’m doing this because I find it interesting, fun, and above all, useful. If it helps even one person on their cybersecurity journey, then it’s been worth it. ",
     "url": "/#no-profit-just-passion",
     
     "relUrl": "/#no-profit-just-passion"
-  },"80": {
+  },"88": {
     "doc": "Home",
     "title": "Honoring Authorship",
     "content": "Integrity is important to me. I have no desire to take credit for work that isn’t mine. If you notice any missing references or attributions, please let me know so I can give proper credit where it’s due. This project is about sharing knowledge, not claiming ownership of ideas that belong to others. ",
     "url": "/#honoring-authorship",
     
     "relUrl": "/#honoring-authorship"
-  },"81": {
+  },"89": {
     "doc": "Home",
     "title": "Disclaimer",
     "content": "This project is intended solely for educational and informational purposes. The content provided here is shared “as is,” with no guarantees regarding its completeness, accuracy, reliability, or suitability for any particular purpose. Any actions you take based on the information provided are strictly at your own risk. The techniques and insights shared here are meant to educate and inform, not to encourage or condone illegal or unethical activities. The responsibility for how this information is used lies entirely with the user. The authors and contributors of this project do not accept liability for any loss, damage, or harm that may result from the use of this information. If you decide to implement any of the techniques or tips discussed here, please ensure that you do so legally, ethically, and with the necessary permissions. By engaging with this content, you agree to release the authors and contributors from any and all liability related to its use. ",
     "url": "/#disclaimer",
     
     "relUrl": "/#disclaimer"
-  },"82": {
+  },"90": {
     "doc": "Home",
     "title": "License",
     "content": "The theme is available as open source under the terms of the MIT License. Just the Docs is distributed by an MIT license. Contributing . When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in our GitHub repo. Thank you to the scribes helping in writing the Cyber Grimoire! . | | . ",
     "url": "/#license",
     
     "relUrl": "/#license"
-  },"83": {
+  },"91": {
     "doc": "Home",
     "title": "Props!",
-    "content": "This project uses Jekyll + GitPages as the “infrastructure”, and uses a modified version of Just-the-Docs theme forr Jekyll. Thank you to the creators of these tools/technologies. Jekyll GitHub Pages Just the Docs . ",
+    "content": "This project uses Jekyll + GitPages and a modified version of Just-the-Docs theme for Jekyll. Thank you to the creators of these! . Jekyll GitHub Pages Just the Docs . ",
     "url": "/#props",
     
     "relUrl": "/#props"
-  },"84": {
+  },"92": {
     "doc": "Home",
     "title": "Home",
     "content": ". ",
     "url": "/",
     
     "relUrl": "/"
-  },"85": {
+  },"93": {
     "doc": "Labels",
     "title": "Labels",
     "content": "Use labels as a way to add an additional mark to a section of your docs. Labels come in a few colors. By default, labels will be blue. Default label . Blue label . Stable . New release . Coming soon . Deprecated . Default label {: .label } Blue label {: .label .label-blue } Stable {: .label .label-green } New release {: .label .label-purple } Coming soon {: .label .label-yellow } Deprecated {: .label .label-red } . ",
     "url": "/docs/ui-components/labels/",
     
     "relUrl": "/docs/ui-components/labels/"
-  },"86": {
+  },"94": {
     "doc": "Layout",
     "title": "Layout Utilities",
     "content": " ",
     "url": "/docs/utilities/layout/#layout-utilities",
     
     "relUrl": "/docs/utilities/layout/#layout-utilities"
-  },"87": {
+  },"95": {
     "doc": "Layout",
     "title": "Table of contents",
     "content": ". | Spacing | Horizontal Alignment | Vertical Alignment | Display | . ",
     "url": "/docs/utilities/layout/#table-of-contents",
     
     "relUrl": "/docs/utilities/layout/#table-of-contents"
-  },"88": {
+  },"96": {
     "doc": "Layout",
     "title": "Spacing",
     "content": "These spacers are available to use for margins and padding with responsive utility classes. Combine these prefixes with a screen size and spacing scale to use them responsively. | Classname prefix | What it does | . | .m- | margin | . | .mx- | margin-left, margin-right | . | .my- | margin top, margin bottom | . | .mt- | margin-top | . | .mr- | margin-right | . | .mb- | margin-bottom | . | .ml- | margin-left | . | Classname prefix | What it does | . | .p- | padding | . | .px- | padding-left, padding-right | . | .py- | padding top, padding bottom | . | .pt- | padding-top | . | .pr- | padding-right | . | .pb- | padding-bottom | . | .pl- | padding-left | . Spacing values are based on a 1rem = 16px spacing scale, broken down into these units: . | Spacer/suffix | Size in rems | Rem converted to px | . | 1 | 0.25rem | 4px | . | 2 | 0.5rem | 8px | . | 3 | 0.75rem | 12px | . | 4 | 1rem | 16px | . | 5 | 1.5rem | 24px | . | 6 | 2rem | 32px | . | 7 | 2.5rem | 40px | . | 8 | 3rem | 48px | . | auto | auto | auto | . Use mx-auto to horizontally center elements. Examples . In Markdown, use the {: } wrapper to apply custom classes: . This paragraph will have a margin bottom of 1rem/16px on large screens. {: .mb-lg-4 } This paragraph will have 2rem/32px of padding on the right and left at all screen sizes. {: .px-6 } . ",
     "url": "/docs/utilities/layout/#spacing",
     
     "relUrl": "/docs/utilities/layout/#spacing"
-  },"89": {
+  },"97": {
     "doc": "Layout",
     "title": "Horizontal Alignment",
     "content": "| Classname | What it does | . | .float-left | float: left | . | .float-right | float: right | . | .flex-justify-start | justify-content: flex-start | . | .flex-justify-end | justify-content: flex-end | . | .flex-justify-between | justify-content: space-between | . | .flex-justify-around | justify-content: space-around | . Note: any of the flex- classes must be used on a parent element that has d-flex applied to it. ",
     "url": "/docs/utilities/layout/#horizontal-alignment",
     
     "relUrl": "/docs/utilities/layout/#horizontal-alignment"
-  },"90": {
+  },"98": {
     "doc": "Layout",
     "title": "Vertical Alignment",
     "content": "| Classname | What it does | . | .v-align-baseline | vertical-align: baseline | . | .v-align-bottom | vertical-align: bottom | . | .v-align-middle | vertical-align: middle | . | .v-align-text-bottom | vertical-align: text-bottom | . | .v-align-text-top | vertical-align: text-top | . | .v-align-top | vertical-align: top | . ",
     "url": "/docs/utilities/layout/#vertical-alignment",
     
     "relUrl": "/docs/utilities/layout/#vertical-alignment"
-  },"91": {
+  },"99": {
     "doc": "Layout",
     "title": "Display",
     "content": "Display classes aid in adapting the layout of the elements on a page: . | Class |   | . | .d-block | display: block | . | .d-flex | display: flex | . | .d-inline | display: inline | . | .d-inline-block | display: inline-block | . | .d-none | display: none | . Use these classes in conjunction with the responsive modifiers. Examples . In Markdown, use the {: } wrapper to apply custom classes: . This button will be hidden until medium screen sizes: [ A button ](#url) {: .d-none .d-md-inline-block } These headings will be `inline-block`: ### heading 3 {: .d-inline-block } ### heading 3 {: .d-inline-block } . ",
     "url": "/docs/utilities/layout/#display",
     
     "relUrl": "/docs/utilities/layout/#display"
-  },"92": {
+  },"100": {
     "doc": "Layout",
     "title": "Layout",
     "content": " ",
     "url": "/docs/utilities/layout/",
     
     "relUrl": "/docs/utilities/layout/"
-  },"93": {
+  },"101": {
     "doc": "Code with line numbers",
     "title": "Code snippets with line numbers",
     "content": "In prior versions of the docs, we provided “workarounds” to rendering issues arising from code snippets with line numbers. While these seemed to resolve visual layout issues, they did not resolve core issues with Jekyll generating invalid HTML. See the detailed explanation for more information. The default settings for HTML compression are incompatible with the HTML produced by Jekyll for line numbers from highlighted code – both when using Kramdown code fences and when using Liquid highlight tags. To avoid non-conforming HTML and unsatisfactory layout, HTML compression can be turned off by using the following configuration option: . compress_html: ignore: envs: all . When using Kramdown code fences, line numbers are turned on globally by the following configuration option: . kramdown: syntax_highlighter_opts: block: line_numbers: true . Line numbers can then be suppressed locally using Liquid tags (without the linenos option) instead of fences: . {% highlight some_language %} Some code {% endhighlight %} . ",
     "url": "/docs/ui-components/code/line-numbers/#code-snippets-with-line-numbers",
     
     "relUrl": "/docs/ui-components/code/line-numbers/#code-snippets-with-line-numbers"
-  },"94": {
+  },"102": {
     "doc": "Code with line numbers",
     "title": "Detailed Error Explanation",
     "content": "Consider this following code snippet, intended to highlight a simple Ruby program: . {% highlight ruby linenos %} def foo puts 'foo' end {% endhighlight %} . If this is directly placed within a file processed by Jekyll (via Just the Docs, with HTML compression enabled), the following markup will be generated: . &lt;figure class=\"highlight\"&gt;&gt;&lt;code class=\"language-ruby\" data-lang=\"ruby\"&gt;&lt;div class=\"table-wrapper\"&gt;&lt;table class=\"rouge-table\"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=\"gutter gl\"&gt;&lt;pre class=\"lineno\"&gt;1 2 3 &lt;/pre&gt;&lt;td class=\"code\"&gt;&lt;pre&gt;&lt;span class=\"k\"&gt;def&lt;/span&gt; &lt;span class=\"nf\"&gt;foo&lt;/span&gt; &lt;span class=\"nb\"&gt;puts&lt;/span&gt; &lt;span class=\"s1\"&gt;'foo'&lt;/span&gt; &lt;span class=\"k\"&gt;end&lt;/span&gt; &lt;/pre&gt;&lt;/figure&gt; . This HTML is invalid; in particular, there are two issues: . | there are many missing closing tags, and a superfluous &gt;, which produce visually garbled output | a &lt;table&gt; is placed within a &lt;code&gt; element, which is syntactically invalid HTML (but is often allowed by browsers) | . To emphasize this first difference, here is the same markup output, indented by tag: . &lt;figure class=\"highlight\"&gt; &gt; &lt;code class=\"language-ruby\" data-lang=\"ruby\"&gt; &lt;div class=\"table-wrapper\"&gt; &lt;table class=\"rouge-table\"&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td class=\"gutter gl\"&gt; &lt;pre class=\"lineno\"&gt; 1 2 3 &lt;/pre&gt; &lt;td class=\"code\"&gt; &lt;pre&gt; &lt;span class=\"k\"&gt;def&lt;/span&gt; &lt;span class=\"nf\"&gt;foo&lt;/span&gt; &lt;span class=\"nb\"&gt;puts&lt;/span&gt; &lt;span class=\"s1\"&gt;'foo'&lt;/span&gt; &lt;span class=\"k\"&gt;end&lt;/span&gt; &lt;/pre&gt; &lt;/figure&gt; . In order, there are missing &lt;/td&gt;, &lt;/td&gt;, &lt;/tr&gt;, &lt;/tbody&gt;, &lt;/table&gt;, &lt;/div&gt;, and &lt;/code&gt; tags. As a result, the following elements of the page - including the site footer - become visually garbled as browsers attempt to recover gracefully. Prior workarounds we suggested (such as Dmitry Hrabrov’s in jekyll-compress-html#71) resolve the missing tag problem. However, they still place a &lt;table&gt; within a &lt;code&gt; element. The HTML spec normatively states that &lt;code&gt; elements should only contain “phrasing content”, which does not include &lt;table&gt; (spec ref). To avoid incorrectly rendered HTML, the previously-suggested workaround using the current version of _includes/fix_linenos.html should not be used! . ",
     "url": "/docs/ui-components/code/line-numbers/#detailed-error-explanation",
     
     "relUrl": "/docs/ui-components/code/line-numbers/#detailed-error-explanation"
-  },"95": {
+  },"103": {
     "doc": "Code with line numbers",
     "title": "Code with line numbers",
     "content": " ",
     "url": "/docs/ui-components/code/line-numbers/",
     
     "relUrl": "/docs/ui-components/code/line-numbers/"
-  },"96": {
+  },"104": {
     "doc": "Lists",
     "title": "Lists",
     "content": " ",
     "url": "/docs/ui-components/lists/",
     
     "relUrl": "/docs/ui-components/lists/"
-  },"97": {
+  },"105": {
     "doc": "Lists",
     "title": "Table of contents",
     "content": ". | Unordered list | Ordered list | Task list | Definition list | . Most lists can be rendered with pure Markdown. ",
     "url": "/docs/ui-components/lists/#table-of-contents",
     
     "relUrl": "/docs/ui-components/lists/#table-of-contents"
-  },"98": {
+  },"106": {
     "doc": "Lists",
     "title": "Unordered list",
     "content": ". | Item 1 | Item 2 | Item 3 | . or . | Item 1 | Item 2 | Item 3 | . - Item 1 - Item 2 - Item 3 _or_ * Item 1 * Item 2 * Item 3 . ",
     "url": "/docs/ui-components/lists/#unordered-list",
     
     "relUrl": "/docs/ui-components/lists/#unordered-list"
-  },"99": {
+  },"107": {
     "doc": "Lists",
     "title": "Ordered list",
     "content": ". | Item 1 | Item 2 | Item 3 | . 1. Item 1 1. Item 2 1. Item 3 . ",
     "url": "/docs/ui-components/lists/#ordered-list",
     
     "relUrl": "/docs/ui-components/lists/#ordered-list"
-  },"100": {
+  },"108": {
     "doc": "Lists",
     "title": "Task list",
     "content": ". | hello, this is a todo item | hello, this is another todo item | goodbye, this item is done | . - [ ] hello, this is a todo item - [ ] hello, this is another todo item - [x] goodbye, this item is done . ",
     "url": "/docs/ui-components/lists/#task-list",
     
     "relUrl": "/docs/ui-components/lists/#task-list"
-  },"101": {
+  },"109": {
     "doc": "Lists",
     "title": "Definition list",
     "content": "Definition lists require HTML syntax and aren’t supported with the GitHub Flavored Markdown compiler. Name Godzilla Born 1952 Birthplace Japan Color Green &lt;dl&gt; &lt;dt&gt;Name&lt;/dt&gt; &lt;dd&gt;Godzilla&lt;/dd&gt; &lt;dt&gt;Born&lt;/dt&gt; &lt;dd&gt;1952&lt;/dd&gt; &lt;dt&gt;Birthplace&lt;/dt&gt; &lt;dd&gt;Japan&lt;/dd&gt; &lt;dt&gt;Color&lt;/dt&gt; &lt;dd&gt;Green&lt;/dd&gt; &lt;/dl&gt; . ",
     "url": "/docs/ui-components/lists/#definition-list",
     
     "relUrl": "/docs/ui-components/lists/#definition-list"
-  },"102": {
+  },"110": {
     "doc": "Minimal layout child page",
     "title": "Minimal layout child page",
     "content": "This is a child page that uses the same minimal layout as its parent page. ",
     "url": "/docs/layout/minimal/minimal-child/",
     
     "relUrl": "/docs/layout/minimal/minimal-child/"
-  },"103": {
+  },"111": {
     "doc": "Minimal layout test",
     "title": "Minimal layout test",
     "content": "Return to main website. This page demonstrates the packaged minimal layout, which does not render the sidebar or header. It can be used for standalone pages. It is also an example of using the new modular site components to define custom layouts; see “Custom layouts and includes” in the customization docs for more information. ",
     "url": "/docs/minimal-test/",
     
     "relUrl": "/docs/minimal-test/"
-  },"104": {
+  },"112": {
     "doc": "A minimal layout page",
     "title": "A minimal layout page",
     "content": "This page illustrates the built-in layout minimal. One of its child pages also uses the minimal layout; the other child pages uses the default layout. ",
     "url": "/docs/layout/minimal/minimal/",
     
     "relUrl": "/docs/layout/minimal/minimal/"
-  },"105": {
+  },"113": {
     "doc": "Responsive Modifiers",
     "title": "Responsive modifiers",
     "content": "Just the Docs spacing works in conjunction with a variety of modifiers that allow you to target specific screen sizes responsively. Use these in conjunction with spacing and display prefix and suffix classes. | Modifier | Screen size | . | (none) | All screens until the next modifier | . | xs | 320px (20rem) and up | . | sm | 500px (31.25rem) and up | . | md | 740px (46.25rem) and up | . | lg | 1120px (70rem) and up | . | xl | 1400px (87.5rem) and up | . ",
     "url": "/docs/utilities/responsive-modifiers/#responsive-modifiers",
     
     "relUrl": "/docs/utilities/responsive-modifiers/#responsive-modifiers"
-  },"106": {
+  },"114": {
     "doc": "Responsive Modifiers",
     "title": "Responsive Modifiers",
     "content": " ",
     "url": "/docs/utilities/responsive-modifiers/",
     
     "relUrl": "/docs/utilities/responsive-modifiers/"
-  },"107": {
+  },"115": {
     "doc": "Tables",
     "title": "Tables",
     "content": "Tables are responsive by default, allowing wide tables to have a horizontal scroll to access columns outside of the normal viewport. | head1 | head two | three | . | ok | good swedish fish | nice | . | out of stock | good and plenty | nice | . | ok | good oreos | hmm | . | ok | good zoute drop | yumm | . | head1 | head two | three |:-------------|:------------------|:------| ok | good swedish fish | nice | out of stock | good and plenty | nice | ok | good `oreos` | hmm | ok | good `zoute` drop | yumm | . ",
     "url": "/docs/ui-components/tables/",
     
     "relUrl": "/docs/ui-components/tables/"
-  },"108": {
+  },"116": {
     "doc": "Typography",
     "title": "Typography Utilities",
     "content": " ",
     "url": "/docs/utilities/typography/#typography-utilities",
     
     "relUrl": "/docs/utilities/typography/#typography-utilities"
-  },"109": {
+  },"117": {
     "doc": "Typography",
     "title": "Table of contents",
     "content": ". | Font size | Font weight | Line height | Text justification | . ",
     "url": "/docs/utilities/typography/#table-of-contents",
     
     "relUrl": "/docs/utilities/typography/#table-of-contents"
-  },"110": {
+  },"118": {
     "doc": "Typography",
     "title": "Font size",
     "content": "Use the .fs-1 - .fs-10 to set an explicit font-size. | Class | Small screen size font-size | Large screen size font-size | . | .fs-1 | 9px | 10px | . | .fs-2 | 11px | 12px | . | .fs-3 | 12px | 14px | . | .fs-4 | 14px | 16px | . | .fs-5 | 16px | 18px | . | .fs-6 | 18px | 24px | . | .fs-7 | 24px | 32px | . | .fs-8 | 32px | 38px | . | .fs-9 | 38px | 42px | . | .fs-10 | 42px | 48px | . Font size 1 . Font size 2 . Font size 3 . Font size 4 . Font size 5 . Font size 6 . Font size 7 . Font size 8 . Font size 9 . Font size 10 . In Markdown, use the `{: }` wrapper to apply custom classes: Font size 1 {: .fs-1 } Font size 2 {: .fs-2 } Font size 3 {: .fs-3 } Font size 4 {: .fs-4 } Font size 5 {: .fs-5 } Font size 6 {: .fs-6 } Font size 7 {: .fs-7 } Font size 8 {: .fs-8 } Font size 9 {: .fs-9 } Font size 10 {: .fs-10 } . ",
     "url": "/docs/utilities/typography/#font-size",
     
     "relUrl": "/docs/utilities/typography/#font-size"
-  },"111": {
+  },"119": {
     "doc": "Typography",
     "title": "Font weight",
     "content": "Use the .fw-300 - .fw-700 to set an explicit font-weight. Font weight 300 . Font weight 400 . Font weight 500 . Font weight 700 . In Markdown, use the `{: }` wrapper to apply custom classes: Font weight 300 {: .fw-300 } Font weight 400 {: .fw-400 } Font weight 500 {: .fw-500 } Font weight 700 {: .fw-700 } . ",
     "url": "/docs/utilities/typography/#font-weight",
     
     "relUrl": "/docs/utilities/typography/#font-weight"
-  },"112": {
+  },"120": {
     "doc": "Typography",
     "title": "Line height",
     "content": "Use the lh- classes to explicitly apply line height to text. | Class | line-height value | Notes | . | .lh-0 | 0 |   | . | .lh-tight | 1.1 | Default for headings | . | .lh-default | 1.4 | Default for body (paragraphs) | . No Line height No Line height . Tight line height Tight line height . Default line height Default line height . In Markdown, use the `{: }` wrapper to apply custom classes: No Line height No Line height {: .lh-0 } Tight line height Tight line height {: .lh-tight } Default line height Default line height {: .fh-default } . ",
     "url": "/docs/utilities/typography/#line-height",
     
     "relUrl": "/docs/utilities/typography/#line-height"
-  },"113": {
+  },"121": {
     "doc": "Typography",
     "title": "Text justification",
     "content": "By default text is justified left. Use these text- classes to override settings: . | Class | What it does | . | .text-left | text-align: left | . | .text-right | text-align: right | . | .text-center | text-align: center | . ",
     "url": "/docs/utilities/typography/#text-justification",
     
     "relUrl": "/docs/utilities/typography/#text-justification"
-  },"114": {
+  },"122": {
     "doc": "Typography",
     "title": "Typography",
     "content": " ",
     "url": "/docs/utilities/typography/",
     
     "relUrl": "/docs/utilities/typography/"
-  },"115": {
+  },"123": {
     "doc": "Web",
     "title": "Web",
     "content": "XSS Test Parent Dir . ",
     "url": "/docs/Web",
     
     "relUrl": "/docs/Web"
-  },"116": {
+  },"124": {
     "doc": "XSS",
     "title": "XSS",
     "content": "XSS Main Page . ",
     "url": "/docs/Web/XSS/xss/",
     
     "relUrl": "/docs/Web/XSS/xss/"
-  },"117": {
+  },"125": {
     "doc": "XSS - DOM",
     "title": "XSS - DOM",
     "content": " ",
     "url": "/docs/Web/XSS/xss_DOM/",
     
     "relUrl": "/docs/Web/XSS/xss_DOM/"
-  },"118": {
+  },"126": {
     "doc": "XSS - Reflected",
     "title": "Reflected XSS (Cross-Site Scripting)",
     "content": "Vulnerability Reporting Template . ",
     "url": "/docs/Web/XSS/xss_reflected/#reflected-xss-cross-site-scripting",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#reflected-xss-cross-site-scripting"
-  },"119": {
+  },"127": {
     "doc": "XSS - Reflected",
     "title": "Summary",
     "content": "Reflected XSS, often called non-persistent XSS, happens when a website echoes back information submitted by a user without adequately cleaning it up or escaping harmful elements. This vulnerability can be exploited by an attacker who crafts a special URL or form that includes malicious JavaScript code. When another user clicks on this link or submits the form, the embedded JavaScript runs within their browser. This occurs because the web server uses the user’s input directly in its response. For example, if you search for a term on a website, and the website immediately shows “Results for [your search term]”, without checking if the input contains harmful scripts, an attacker could use this opportunity to inject a script instead of a simple search term. If the script is embedded in a URL and someone else clicks on it, the script will execute in their browser, leading to potential harm such as stealing cookies, capturing keyboard input, or other malicious activities. The key to preventing this type of attack is for websites to sanitize any data received from users, ensuring that any potentially dangerous scripts are neutralized before they can cause harm. ",
     "url": "/docs/Web/XSS/xss_reflected/#summary",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#summary"
-  },"120": {
+  },"128": {
     "doc": "XSS - Reflected",
     "title": "Impact",
     "content": "Reflected XSS attacks can have significant consequences depending on the context in which they are exploited: . | Data Theft: Attackers can steal cookies, session tokens, or other sensitive data. | Account Takeover: By hijacking sessions, attackers can gain unauthorized access to user accounts. | Defacement: Malicious scripts can modify the appearance of a website. | Phishing: Attackers can redirect victims to fake login pages or other malicious sites. | . ",
     "url": "/docs/Web/XSS/xss_reflected/#impact",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#impact"
-  },"121": {
+  },"129": {
     "doc": "XSS - Reflected",
     "title": "Severity (CVSS)",
     "content": ". | Base Score: Typically between 4.0 (Medium) to 7.5 (High), depending on the context and impact. | Attack Vector: Network | Attack Complexity: Low | Privileges Required: None | User Interaction: Required | . ",
     "url": "/docs/Web/XSS/xss_reflected/#severity-cvss",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#severity-cvss"
-  },"122": {
+  },"130": {
     "doc": "XSS - Reflected",
     "title": "Detection - Exploitation",
     "content": " ",
     "url": "/docs/Web/XSS/xss_reflected/#detection---exploitation",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#detection---exploitation"
-  },"123": {
+  },"131": {
     "doc": "XSS - Reflected",
     "title": "How?",
     "content": ". | Detection: . | Look for input fields, parameters, or URLs that reflect user input in the response. | . | Exploitation: . | Crafting the Payload: . | Inject a payload such as &lt;script&gt;alert('XSS')&lt;/script&gt; into vulnerable parameters. | . | Delivering the Attack: . | Social engineering techniques are often used to trick victims into clicking on a malicious link. | . | Testing and Validation: . | If the script executes within the victim’s browser without being sanitized, the vulnerability is confirmed. | . | . | . Upon finding a reflection of user input within the web application, there is potential for reflected XSS. Reflection meaning that the user input is getting sent (reflected) back to the user’s browser without escaping/encoding special characters such as &lt;&gt; . After confirming the user input reflection, we can try and execute JavaScript. We caan use a simple payload like alert(‘XSS’) . And we have an alert pop-up show on screen, confirming the execution of JavaScript. This JavaScript will execute in the browser. When the browser loads the page, and the payload we sent, it parses it as legitimate code, and executes it. We can now try a more interesting payload, and get sensitive infomation from the victim, as an example we are going to use alert(document.cookie) . Which gives us the cookies stored in the client/victim browser, cookies from the web application we are exploiting, within the pop-up alert box. If the user input parameter comes in the URL, we can send the URL with the JavaScript payloaad to the victim and it will execute the payload on the victim’s browser. ",
     "url": "/docs/Web/XSS/xss_reflected/#how",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#how"
-  },"124": {
+  },"132": {
     "doc": "XSS - Reflected",
     "title": "Why?",
     "content": "The vulnerability arises because the application: . | Does not adequately sanitize user-supplied input, allowing scripts to be included. | Directly reflects user input in HTTP responses. | Fails to encode or escape outputs when generating output in HTML, making it susceptible to script injection. | . An example of such vulnerability in code: . &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\"&gt; &lt;title&gt;Reflected XSS Demo&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Search&lt;/h1&gt; &lt;form action=\"\" method=\"GET\"&gt; &lt;label for=\"query\"&gt;Enter your search term:&lt;/label&gt; &lt;input type=\"text\" id=\"query\" name=\"query\"&gt; &lt;input type=\"submit\" value=\"Search\"&gt; &lt;/form&gt; &lt;p&gt;You searched for: &lt;/p&gt; &lt;div id=\"results\"&gt; &lt;!-- This is where the reflected XSS vulnerability occurs --&gt; &lt;script&gt; const urlParams = new URLSearchParams(window.location.search); const query = urlParams.get('query'); if (query) { document.write(query); // Use document.write to directly write user input } &lt;/script&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; &lt;!-- Within HTML so you can see how it works locally, save the code and run it on your browser--&gt; . If query = urlParams.get('query'); is inserted without sanitization, it’s vulnerable to XSS. The simplest payload you can try and check for XSS is: . &lt;script&gt;alert('XSS Vulnerability!');&lt;/script&gt; . ",
     "url": "/docs/Web/XSS/xss_reflected/#why",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#why"
-  },"125": {
+  },"133": {
     "doc": "XSS - Reflected",
     "title": "Remediation",
     "content": ". | Input Validation: . | Ensure that all user inputs are validated for allowed characters and data types. | . | Output Encoding: . | Encode user-supplied data before displaying it in the browser. Use appropriate context-specific encoding (HTML, JavaScript, URL encoding). | . | Content Security Policy (CSP): . | Implement a strict CSP to mitigate the impact of XSS by restricting the sources from which scripts can be executed. | . | Security Frameworks and Libraries: . | Use security-focused libraries and frameworks that automatically handle input sanitization and output encoding. | . | Regular Security Audits: . | Perform regular security audits and penetration tests to identify and fix XSS vulnerabilities. | . | . ",
     "url": "/docs/Web/XSS/xss_reflected/#remediation",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#remediation"
-  },"126": {
+  },"134": {
     "doc": "XSS - Reflected",
     "title": "References",
     "content": ". | OWASP Cross-Site Scripting (XSS) | PortSwigger Web Security Academy: Reflected XSS | Mozilla Developer Network (MDN): XSS Prevention | DVWA - DAMN VULNERABLE WEB APPLICATION | OWASP XSS Prevention CheatSheet | . ",
     "url": "/docs/Web/XSS/xss_reflected/#references",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/#references"
-  },"127": {
+  },"135": {
     "doc": "XSS - Reflected",
     "title": "XSS - Reflected",
     "content": " ",
     "url": "/docs/Web/XSS/xss_reflected/",
     
     "relUrl": "/docs/Web/XSS/xss_reflected/"
-  },"128": {
+  },"136": {
     "doc": "XSS - Stored",
     "title": "SS Rflected",
     "content": "Test.python . ",
     "url": "/docs/Web/XSS/xss_stored/#ss-rflected",
     
     "relUrl": "/docs/Web/XSS/xss_stored/#ss-rflected"
-  },"129": {
+  },"137": {
     "doc": "XSS - Stored",
     "title": "XSS - Stored",
     "content": " ",
